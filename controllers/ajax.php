@@ -14,7 +14,7 @@ if(isset($_POST['flag'])){
           $i=1;
         while($rowFaculty = mysqli_fetch_assoc($executeSelectFacultyQuery)){
           //   $return_array[] = $rowFaculty[0];
-          $output .= "<tr>";
+          $output .= "<tr id='".$rowFaculty['Userid']."'>";
           $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
           $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
           $selectStatusQuery = "SELECT * from status where Userid = ".$rowFaculty['Userid'];
@@ -45,7 +45,21 @@ if(isset($_POST['flag'])){
      //    echo json_encode($return_array)
      echo $output;
      }
+     
 }
+if($_GET['flag']=='checkFormProgress'){
+          $selectStatusQuery = "SELECT * from status where Userid = ".$_GET['Userid'];
+          $executeSelectStatusQuery = mysqli_query($con ,$selectStatusQuery );
+          $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
+          $return_array = array();
+          if($rowStatus['SectionIII'] == 1){
+               $return_array[]=1;
+          }
+          else{
+               $return_array[]=0;
+          }
+          echo json_encode($return_array);
+     }
 
 // if(isset($_POST['search_post_btn']))
 // {

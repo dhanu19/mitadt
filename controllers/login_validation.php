@@ -1,6 +1,6 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
-$servername = 'localhost:3307';
+$servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'mitadt';
@@ -43,16 +43,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }elseif($row['Designation'] == 'Principal'){
                 //redirect to principal dashboard
                 header('location:../principal.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'HOD'){
+            }elseif($row['Designation'] == 'Professor (HOD)'){
                 //redirect to hod dashboard
                 header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Assistant Professor'){
+            }else{
                 //redirect to assistant professor dashboard
                 header('location:../dashboardself.php'); // redirect to registration page //tell to add designation
-            }else{
-                error('404'); // redirect to registration page //tell to add designation
-            
             }
+            // else{
+            //     error('404'); // redirect to registration page //tell to add designation
+            
+            // }
             
         }else{ //forms not filled fully
             /*
