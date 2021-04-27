@@ -73,7 +73,7 @@ https://templatemo.com/tm-535-softy-pinko
                         FORM B (Section 4)
                     </div>
                     <div class="panel-body bio-graph-info">
-                        
+                    <form action="controllers/formB4empRatingController.php?userId=<?php echo $_GET['userId']; ?>">
                         <div class="row">
                             <div class="panel-body bio-graph-info" style="background-color:white">
                                 <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
@@ -108,14 +108,14 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td  style="text-align: left;"><div allign="justify">Placement support (MoU's created form the Industries at National and International level) (2 Points/ activity, max. 05 points all together)</div></td>
                                             <td style="text-align: center;">5</td>
                                             <td><input type="number" placeholder="0-5" aria-label="0-5" min="0" max="5"
-                                                    style="width: 135px;" name="a1sr"></td>
+                                                    style="width: 135px;" name="Activity1ER"></td>
                                             
                                         <tr>
                                             <th scope="row"  style="text-align: center;" >2</th>
                                             <td  style="text-align: left;"><div allign="justify">Improvement in University organized Programs; e.g. Persona Fest etc…, (5 points/ activity, max. 05 points)</div></td>
                                             <td style="text-align: center;">5</td>
                                             <td><input type="number" placeholder="0-5" aria-label="0-5" min="0" max="5"
-                                                    style="width: 135px;" name="a2sr"></td>
+                                                    style="width: 135px;" name="Activity2ER"></td>
                                             
                                                     
                                         <tr>
@@ -123,7 +123,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td  style="text-align: left;"><div allign="justify">Involvement in University Admission process, Exhibition Drive/ Education Expo, Branding work and School of Holistic Development activities (2 points/ activity/ semester, Max. 05 points all together)</div></td>
                                             <td style="text-align: center;">5</td>
                                             <td><input type="number" placeholder="0-5" aria-label="0-5" min="0" max="5"
-                                                    style="width: 135px;" name="a3sr"></td>
+                                                    style="width: 135px;" name="Activity3ER"></td>
                                             
                                                     
                                          <tr>
@@ -131,7 +131,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td  style="text-align: left;"><div allign="justify">Value Addition Programmes (other than regular syllabus which is helpful to the students) (2 points/ activity/ semester, max. 05 points all together)</div></td>
                                             <td style="text-align: center;">05</td>
                                             <td><input type="number" placeholder="0-5" aria-label="0-5" min="0" max="5"
-                                                    style="width: 135px;" name="a4sr"></td>
+                                                    style="width: 135px;" name="Activity4ER"></td>
                                             
                                                     
                                             

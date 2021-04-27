@@ -73,6 +73,7 @@ https://templatemo.com/tm-535-softy-pinko
                         FORM B (Section 2)
                     </div>
                     <div class="panel-body bio-graph-info">
+                    <form action="controllers/formB2empRatingController.php?userId=<?php echo $_GET['userId']; ?>">
 
                         <div class="row">
                             <div class="panel-body bio-graph-info" style="background-color:white">
@@ -99,7 +100,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10" style="width: 135px;">
+                                                    max="10" style="width: 135px;" name="Activity1ER">
                                             </div></td>
                                             
 
@@ -108,12 +109,12 @@ https://templatemo.com/tm-535-softy-pinko
                                         <tr>
                                             <th scope="row" style="text-align: center;">2</th>
                                             <td style="text-align: left;"><div allign="justify">
-                                              <div align="justify">Sponsored/ Funded Projects/ consultancy carried out/ ongoing (more than 50 lakhs-5, More than 10 lakhs-3, Less than 10 lakhs-2), Max 05 Points.</div>
+                                              <div align="justify"><b>Sponsored/ Funded Projects/ consultancy carried out/ ongoing (more than 50 lakhs-5, More than 10 lakhs-3, Less than 10 lakhs-2), Max 05 Points.</b></div>
                                             </div></td>
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10" style="width: 135px;">
+                                                    max="10" style="width: 135px;"name="Activity2ER">
                                             </div></td>
                                             
 
@@ -128,7 +129,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10" style="width: 135px;">
+                                                    max="10" style="width: 135px;"name="Activity3ER">
                                             </div></td>
                                             
 
@@ -144,7 +145,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10" style="width: 135px;">
+                                                    max="10" style="width: 135px;"name="Activity4ER">
                                             </div></td>
                                             
 
@@ -160,7 +161,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10" style="width: 135px;">
+                                                    max="10" style="width: 135px;"name="Activity5ER">
                                             </div></td>
                                             
 
@@ -202,6 +203,7 @@ https://templatemo.com/tm-535-softy-pinko
                             </div>
 
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

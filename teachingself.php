@@ -74,6 +74,7 @@ https://templatemo.com/tm-535-softy-pinko
                     </div>
                     <div class="panel-body bio-graph-info">
 
+                    <form action="controllers/formB1empRatingController.php?userId=<?php echo $_GET['userId']; ?>">
                         <div class="row">
                             <div class="panel-body bio-graph-info" style="background-color:white">
                                 <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
@@ -110,8 +111,9 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">20</td>
                                             <td><div align="center">
                                               <input type="number" placeholder="0-20" aria-label="0-20" min="0"
-                                                    max="20" style="width: 135px;">
+                                                    max="20" style="width: 135px;" name="Activity1ER">
                                             </div></td>
+                                
                                         </tr>
                                         <tr>
                                             <th scope="row" style="text-align: center;">2</th>
@@ -134,7 +136,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">20</td>
                                             <td><div align="center">
                                               <input name="number2" type="number" style="width: 135px;" placeholder="0-20" aria-label="0-20" min="0"
-                                                    max="20">
+                                                    max="20" name="Activity2ER"> 
                                             </div></td>
                                         </tr>
                                         <tr>
@@ -156,7 +158,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">20</td>
                                             <td><div align="center">
                                               <input name="number3" type="number" style="width: 135px;" placeholder="0-20" aria-label="0-20" min="0"
-                                                    max="20">
+                                                    max="20" name="Activity3ER">
                                             </div></td>
                                         </tr>
                                         <tr>
@@ -169,7 +171,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">20</td>
                                             <td><div align="center">
                                               <input name="number4" type="number" style="width: 135px;" placeholder="0-20" aria-label="0-20" min="0"
-                                                    max="20">
+                                                    max="20" name="Activity4ER">
                                             </div></td>
                                         </tr>
 
@@ -183,7 +185,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input name="number5" type="number" style="width: 135px;" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10">
+                                                    max="10" name="Activity5ER">
                                             </div></td>
                                         </tr>
                                         <tr>
@@ -195,7 +197,7 @@ https://templatemo.com/tm-535-softy-pinko
                                             <td style="text-align: center;">10</td>
                                             <td><div align="center">
                                               <input name="number6" type="number" style="width: 135px;" placeholder="0-10" aria-label="0-10" min="0"
-                                                    max="10">
+                                                    max="10" name="Activity6ER">
                                             </div></td>
                                         </tr>
 
@@ -233,7 +235,9 @@ https://templatemo.com/tm-535-softy-pinko
                             </div>
 
                         </div>
+                    </form>
                     </div>
+
                 </div>
             </div>
         </div>
