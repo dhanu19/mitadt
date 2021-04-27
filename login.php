@@ -30,10 +30,8 @@ https://templatemo.com/tm-535-softy-pinko
 
     </head>
     <body>
-        
-        
     
-   
+       
     <?php
         include('headerdirector.php');
     ?> 
@@ -86,7 +84,7 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="row px-3 mb-4">
                     
                     </div>
-
+                        <br>
                     <!--<input type="submit" value="login" name="login" class="btn btn-success">-->
                      <div class="row mb-3 px-3"> <button type="submit" value="login" class="btn btn-blue text-center">Login</button> </div>
                     <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a href="register.html" class="text-danger">Register</a></small> </div>

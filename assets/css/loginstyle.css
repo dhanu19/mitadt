@@ -178,7 +178,7 @@ border-radius: 2px
 }
 
 .btn-blue:hover {
-background-color: #000;
+background-color: #7B68EE;
 cursor: pointer
 }
 
@@ -217,4 +217,5 @@ padding: 0;
 position: absolute;
 top: 0;
 right: 0;
+}
 }
