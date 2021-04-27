@@ -72,64 +72,67 @@ https://templatemo.com/tm-535-softy-pinko
           <div class="bio-graph-heading">
               FROM B
           </div>
+          
           <div class="panel-body bio-graph-info">
               <h1>PERSONAL INFORMATION</h1>
-              <div class="row">
-                  <div class="bio-row">
-                      <p><span>First Name </span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Last Name </span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Father's Name</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>No. of Children</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Date of birth</span><input type="date" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Gender</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Departments</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Marital Status:</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Nationality</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Religion</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Caste</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Sub-Category</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>School name and department name</span> <input class="input" value="" /></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Permanent Address </span><textarea class="form-control" id="form6Example7" rows="4"></textarea></p>
-                  </div>
-                  
-                  <div class="bio-row">
-                      <p><span>Address of correspondance</span><textarea class="form-control" id="form6Example7" rows="4"></textarea></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Current designation and grade pay</span> <input class="input" value="" /></p>
-                  </div>
-                 
+              <!--form start -->
+              <form action="controllers/form_data_validation.php" method="POST">
+                <div class="row">
+                    <div class="bio-row">
+                        <p><span>First Name </span> <input class="input" name="firstName" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Last Name </span> <input class="input" name="lastName" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Father's Name</span> <input class="input" name="fatherName" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>No. of Children</span> <input class="input" name="dependents" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Date of birth</span><input type="date" name="dob" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Gender</span> <input class="input" name="gender" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Departments</span> <input class="input" name="departments" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Marital Status:</span> <input class="input" name="maritalStatus" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Nationality</span> <input class="input" name="nationality" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Religion</span> <input class="input" name="religion" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Caste</span> <input class="input" name="caste" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Sub-Category</span> <input class="input" name="subCategory" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>School name and department name</span> <input class="input" name="schoolDeptName" /></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Permanent Address </span><textarea class="form-control" id="form6Example7" rows="4" name="permanentAddress"></textarea></p>
+                    </div>
+                    
+                    <div class="bio-row">
+                        <p><span>Address of correspondance</span><textarea class="form-control" id="form6Example7" rows="4" name="correspondentAddress"></textarea></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Current designation and grade pay</span> <input class="input" name="designation" /></p>
+                    </div>
+                
                   
                 </div>
             
     
-    
+
                   <!---------->
                   <div class="panel-body bio-graph-info">
                     Are you existing employee:
@@ -157,6 +160,7 @@ https://templatemo.com/tm-535-softy-pinko
                     </div>
                 </div>
 
+                
                 <br>
                 <script src="jquery-1.11.3.js"></script>
                 <script>
@@ -175,7 +179,7 @@ https://templatemo.com/tm-535-softy-pinko
                     });
                 </script>
                 <div class="bio-row">
-                    <p><span>Phone Number</span>: <input type="tel" name="phn" id="phn" value="" /></p>
+                    <p><span>Phone Number</span>: <input type="tel" name="mobile" id="phn" value="" /></p>
                 </div>
                 <div  class="bio-row">
                     <p><span>Password:</span>: </p>
@@ -219,6 +223,9 @@ https://templatemo.com/tm-535-softy-pinko
                       <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div> 
+
+                        </form> 
+                <!-- form end-->
                 
           
 </div>

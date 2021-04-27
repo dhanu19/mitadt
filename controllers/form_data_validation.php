@@ -3,7 +3,7 @@
 $servername = 'localhost:3307';
 $username = 'root';
 $password = '';
-$dbname = 'mit';
+$dbname = 'mitadt';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -46,6 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"];
     $mobile = $_POST["mobile"];
 	
+    echo $name;
 
 	$query = " insert into personaldetails(NameOfFacultyMember,FatherName, Age,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion) values 
     ('$name','$fatherName', '$age','$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion') ";
