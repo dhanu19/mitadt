@@ -111,7 +111,7 @@ https://templatemo.com/tm-535-softy-pinko
 
                                    <br>
                                    <form action="" method="POST">
-                                        <table class="table">
+                                        <table class="table" id="tableId">
 
 
                                              <thead>
@@ -240,9 +240,17 @@ https://templatemo.com/tm-535-softy-pinko
                     //      output += "<option>" + response[i] + "</option>";
                     // }
                     $("#tableBody").html(response);
+                    $("#tableId tr").click(function() {
+                         //  alert($(this).attr('id'));
+                         window.location.href =
+                              "teachinghod1.php?userId=" + $(this).attr('id');
+                    });
                }
           });
      });
+     </script>
+     <script>
+
      </script>
      </br>
      </br>
