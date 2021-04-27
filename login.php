@@ -67,23 +67,28 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="row px-3 mb-4">
                         
                     </div>
-                    <form action="validation.php" class="sign-in-form" method="POST">
-                    <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Adhaar Number</h6>
-                        </label> <input type="number" min="0" max="100" step="5" class="mb-4" type="number" name="aadharno" placeholder="Enter Adhaar Number"> </div>
-                    <div class="row px-3"> <label class="mb-1">
-                
-                        </label> 
+                    <form action="controllers/login_validation.php" class="sign-in-form" method="POST">
+                        <div class="row px-3"> 
+                            <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Adhaar Number</h6>
+                            </label> 
+                            <!-- <input type="number" name="aadharno" min="0" max="100" step="5" class="mb-4" type="number" placeholder="Enter Adhaar Number" required> -->
+                            <input type="number" name="aadharno" class="mb-4" type="number" placeholder="Enter Adhaar Number" required> </div>
+                        <div class="row px-3"> 
+                        <label class="mb-1">
+                        </label>
                         <section>
                             <label for="password">Password</label>
                             <button id="toggle-password" style=" color: black; font-size: small; text-align: right; align-self: auto;"type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
-                            <input id="password" name="password" type="password" autocomplete="current-password" required>
-                          </section>
+                            <input id="password" name="password" type="password" placeholder="Enter Password" autocomplete="current-password" required>
+                        </section>
                     </div>
                     <div class="row px-3 mb-4">
                     
                     </div>
-                    <div class="row mb-3 px-3"> <button type="submit" value="login" class="btn btn-blue text-center">Login</button> </div>
+
+                    <!--<input type="submit" value="login" name="login" class="btn btn-success">-->
+                     <div class="row mb-3 px-3"> <button type="submit" value="login" class="btn btn-blue text-center">Login</button> </div>
                     <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a href="register.html" class="text-danger">Register</a></small> </div>
                 </div>
             </div>
