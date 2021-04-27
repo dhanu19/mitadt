@@ -3,7 +3,7 @@
 $servername = 'localhost:3307';
 $username = 'root';
 $password = '';
-$dbname = 'mitadt';
+$dbname = 'mit';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,88 +18,46 @@ if ($conn->connect_error) {
 
 
 
-<!-- LOGIN CREDENTIALS CHECK  -->
-<?php
 
-$aadharno = $password = "";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
-	$aadharno = $_POST["aadharno"];
-	$password = $_POST["password"]; 
-
-    $sql = "select * from login where AdharCard = '$aadharno' AND Password = '$password' ";
-
-	$result = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result)){
-        //succesfull
-        $row = mysqli_fetch_assoc($result);
-        if($row['LoginStatus'] == 0){
-            /*header('location:../index.php');*/
-    
-                //all forms are filled
-            if($row['Designation'] == 'Admin'){
-                //redirect to admin dashboard
-                header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Principal'){
-                //redirect to principal dashboard
-                header('location:../principal.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'HOD'){
-                //redirect to hod dashboard
-                header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Assistant Professor'){
-                //redirect to assistant professor dashboard
-                header('location:../dashboardself.php'); // redirect to registration page //tell to add designation
-            }else{
-                error('404'); // redirect to registration page //tell to add designation
-            
-            }
-            
-        }else{ //forms not filled fully
-            /*
-            if($row['Designation'] == 'Admin'){
-                //redirect to admin dashboard
-                header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Principal'){
-                //redirect to principal form
-                header('location:../principal.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'HOD'){
-                //redirect to hod form
-                header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Assistant Professor'){
-                //redirect to assistant professor form
-                header('location:../dashboardself.php'); // redirect to registration page //tell to add designation
-            }else{
-                error('404'); // redirect to registration page //tell to add designation
-            }*/
-            header('location:../index.php'); // redirect to index i.e. dashboard
-        }
-    }
-    else{
-        //unsuccessfull
-        header('location:../login.php'); //redirect to login page
-    }
-
-}
-?>
-<!-- LOGIN CREDENTIALS CHECK END -->
 
 
 <!-- INSERT CODE-->
 <?php
-/*
-$aadharno = $password = "";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
-	$aadharno = $_POST["aadharno"];
-	$password = md5($_POST["password"]); //encrypt the password
 
-	$query = " insert into login(AdharCard,Password) values ('$aadharno','$password') ";
+$firstName = $lastName = $name = $fatherName = $age = $dob = $gender = $dependents = $maritalStatus = $nationality = $religion = $email = "";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
+    $name = $firstName.' '.$lastName;
+    $fatherName = $_POST["fatherName"];
+    //$age = $_POST["age"];
+    $dob= $_POST["dob"];
+    $gender = $_POST["gender"];
+    $dependents = $_POST["dependents"];
+    $maritalStatus = $_POST["maritalStatus"];
+    $nationality = $_POST["nationality"];
+    $religion = $_POST["religion"];
+    $caste = $_POST["caste"];
+    $subCategory = $_POST["subCategory"];
+    $schoolDeptName = $_POST["schoolDeptName"];
+    $permanentAddress = $_POST["permanentAddress"];
+    $correspondentAddress = $_POST["correspondentAddress"];
+    $designation = $_POST["designation"];
+    $email = $_POST["email"];
+    $mobile = $_POST["mobile"];
+	
+
+	$query = " insert into personaldetails(NameOfFacultyMember,FatherName, Age,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion) values 
+    ('$name','$fatherName', '$age','$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion') ";
 
 	mysqli_query($conn,$query);
 
+    header('location:../formB1self.php');
+}else{
+    header('location:../index.php');
 }
 
-header('location:../index.php');
-*/
+
+
 ?>
 <!-- INSERT CODE END-->
