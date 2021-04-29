@@ -1,6 +1,7 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
-$servername = 'localhost:3307';
+session_start();
+$servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'mitadt';
@@ -45,15 +46,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $designation = $_POST["designation"];
     $email = $_POST["email"];
     $mobile = $_POST["mobile"];
-	
-    echo $name;
 
-	$query = " insert into personaldetails(NameOfFacultyMember,FatherName, Age,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion) values 
-    ('$name','$fatherName', '$age','$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion') ";
+    $_SESSION['userName'] = $name;
+    $_SESSION['userEmail'] = $email;
+	
+    // echo $name;
+    $varUserId = $_SESSION['userId'];
+
+	$query = " insert into personaldetails(Userid,NameOfFacultyMember,FatherName, DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion) values 
+    ('$varUserId','$name','$fatherName', '$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion') ";
 
 	mysqli_query($conn,$query);
+    $updateLoginStatusQuery = "UPDATE login set LoginStatus = 1 where id = '$varUserId'";
+    mysqli_query($conn,$updateLoginStatusQuery);
 
-    header('location:../formB1self.php');
+    $insertStatusQuery = "Insert into status(Userid,SectionI,SectionII,SectionIII,SectionIV,SectionV) VALUES('$varUserId',0,0,0,0,0)";
+    mysqli_query($conn,$insertStatusQuery);
+
+    // header('location:../formB1self.php');
+    $selectDesignationQuery = "SELECT * from login where id = '$varUserId'";
+    $executeSelectDesignationQuery = mysqli_query($conn, $selectDesignationQuery);
+    $rowDesignation = mysqli_fetch_assoc($executeSelectDesignationQuery);
+    if($rowDesignation['Designation'] == 'Admin'){
+                //redirect to admin dashboard
+                header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
+            }elseif($rowDesignation['Designation'] == 'Principal Dean (R&D)'){
+                //redirect to principal dashboard
+                header('location:../principal.php'); // redirect to registration page //tell to add designation
+            }elseif($rowDesignation['Designation'] == 'Professor (HOD)'){
+                //redirect to hod dashboard
+                header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
+            }else{
+                //redirect to assistant professor dashboard
+                header('location:../dashboardself.php'); // redirect to registration page //tell to add designation
+            }
 }else{
     header('location:../index.php');
 }

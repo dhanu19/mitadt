@@ -1,5 +1,6 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
+session_start();
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -32,17 +33,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)){
         //succesfull
+        session_start();
         $row = mysqli_fetch_assoc($result);
-        if($row['LoginStatus'] == 0){
+        $_SESSION['userId'] = $row['id'];
+
+        $selectUserInfoQuery = "select * from personaldetails where Userid = ".$_SESSION['userId'];
+        $executeSelectInfoQuery = mysqli_query($conn,$selectUserInfoQuery);
+        if(mysqli_num_rows($executeSelectInfoQuery)){
+            $rowInfo = mysqli_fetch_assoc($executeSelectInfoQuery);
+
+            $_SESSION['userName'] = $rowInfo['NameOfFacultyMember'];
+            $_SESSION['userEmail'] = $rowInfo['Email']; 
+        }        
+        if($row['LoginStatus'] == 1){
             /*header('location:../index.php');*/
     
                 //all forms are filled
             if($row['Designation'] == 'Admin'){
                 //redirect to admin dashboard
                 header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Principal'){
+            }elseif($row['Designation'] == 'Principal Dean (R&D)'){
                 //redirect to principal dashboard
-                header('location:../principal.php'); // redirect to registration page //tell to add designation
+                header('location:../dashboarddirector.php'); // redirect to registration page //tell to add designation
             }elseif($row['Designation'] == 'Professor (HOD)'){
                 //redirect to hod dashboard
                 header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
@@ -72,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }else{
                 error('404'); // redirect to registration page //tell to add designation
             }*/
-            header('location:../index.php'); // redirect to index i.e. dashboard
+            header('location:../register.php'); // redirect to index i.e. dashboard
         }
     }
     else{

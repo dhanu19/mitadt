@@ -72,6 +72,21 @@ https://templatemo.com/tm-535-softy-pinko
                          <div class="bio-graph-heading">
                               FORM B (Section 2)
                          </div>
+                         <?php
+                              $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
+                              $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
+                              $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
+                              if($rowStatus['SectionII'] == 0){                                                    
+                         ?>
+                         <div class="panel-body bio-graph-info">
+                              <center>
+                                   <h3>Employee has not filled this form</h3>
+                              </center>
+                              <a
+                                   href="cocurricularhod1.php?userId=<?php echo $_GET['userId'];?>"><button>Next</button></a>
+                         </div>
+                         <?php }
+                         else{ ?>
                          <div class="panel-body bio-graph-info">
                               <form action="controllers/formB2HODRatingController.php?userId=<?php echo $_GET['userId']; ?>"
                                    method="POST">
@@ -100,7 +115,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                   <tbody>
                                                        <?php
                                                     $selectRatingsQuery = "Select * from section_ii where Userid = ".$_GET['userId'];
-                                                    $executeSelectRatingsQuery = mysqli_query($con,$selectRatingsQuery);
+                                                    $executeSelectRatingsQuery = mysqli_query($con, $selectRatingsQuery);
                                                     $rowRatings = mysqli_fetch_assoc($executeSelectRatingsQuery);
                                                     
                                                     ?>
@@ -343,6 +358,7 @@ https://templatemo.com/tm-535-softy-pinko
                                    </div>
                               </form>
                          </div>
+                         <?php } ?>
                     </div>
                </div>
           </div>

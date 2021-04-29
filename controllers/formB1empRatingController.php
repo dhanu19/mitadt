@@ -13,10 +13,16 @@ $varA6ER = $_POST['Activity6ER'];
 $varUserId = $_GET['userId'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER + $varA5ER + $varA6ER);
 
-$updateEmpRatingsQuery = "UPDATE section_i set Activity1ER = '$varA1ER',Activity2ER = '$varA2ER',Activity3ER = '$varA3ER',Activity4ER = '$varA4ER',Activity5HR = '$varA5ER',Activity6HR = '$varA6ER',TotalHodRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
-$executeUpdateEmpRatingsQuery = mysqli_query($con,$updateEmpRatingsQuery);
+$insertEmpRatingsQuery = "INSERT into section_i(Userid,Activity1,Activity2,Activity3,Activity4,Activity5,Activity6,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varA5ER','$varA6ER','$varTotalEmpRating')";
 
-if($executeUpdateEmpRatingsQuery){
-     #header('Location:../researchhod1.php?userId='.$varUserId);
+// $updateEmpRatingsQuery = "UPDATE section_i set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',Activity5 = '$varA5ER',Activity6 = '$varA6ER',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
+$executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
+
+if($executeInsertEmpRatingsQuery){
+     $updateStatusQuery = "Update Status set SectionI = 1 where Userid = '$varUserId'";
+     $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
+     if ($executeUpdateStatusQuery) {
+         header('Location:../researchself1.php?userId='.$varUserId);
+     }
 }
 ?>

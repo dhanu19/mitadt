@@ -73,7 +73,7 @@ https://templatemo.com/tm-535-softy-pinko
                               FORM B (Section 5)
                          </div>
                          <div class="panel-body bio-graph-info">
-                              <form action="controllers/formB5HODRatingController.php?userId=<?php echo $_GET['userId']; ?>"
+                              <form action="controllers/formB5PrincipalRatingController.php?userId=<?php echo $_GET['userId']; ?>"
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
@@ -87,37 +87,33 @@ https://templatemo.com/tm-535-softy-pinko
                                                             <th scope="col" style="text-align: center;">
                                                                  <div align="justify">Parameters</div>
                                                             </th>
-                                                            <th scope="col" style="text-align: center;">Self Rating</th>
+                                                            <!-- <th scope="col" style="text-align: center;">HOD Rating</th> -->
 
-                                                            <th scope="col" style="text-align: center;">HOD
+                                                            <th scope="col" style="text-align: center;">
+                                                                 Principal/Director
                                                                  Rating</th>
                                                        </tr>
                                                   </thead>
                                                   <tbody>
-                                                       <?php
-                                                    $selectRatingsQuery = "Select * from section_v where Userid = ".$_GET['userId'];
-                                                    $executeSelectRatingsQuery = mysqli_query($con,$selectRatingsQuery);
-                                                    $rowRatings = mysqli_fetch_assoc($executeSelectRatingsQuery);
-                                                    
-                                                    ?>
+
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">1</th>
                                                             <td style="text-align: center;">
                                                                  <div align="justify">Punctuality</div>
                                                             </td>
-                                                            <td>
+                                                            <!-- <td>
                                                                  <div align="center">
                                                                       <input type="text" style="width: 135px;"
                                                                            placeholder="0-10"
-                                                                           value="<?php echo $rowRatings['Activity1']; ?>">
+                                                                           value="<?php //echo $rowRatings['Activity1']; ?>">
                                                                  </div>
-                                                            </td>
+                                                            </td> -->
                                                             <td>
                                                                  <div align="center">
                                                                       <input name="number6" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           name="Activity1HR">
+                                                                           name="Activity1PR">
                                                                  </div>
                                                             </td>
                                                        </tr>
@@ -126,20 +122,20 @@ https://templatemo.com/tm-535-softy-pinko
                                                             <td style="text-align: center;">
                                                                  <div align="justify">Integrity</div>
                                                             </td>
-                                                            <td>
+                                                            <!-- <td>
                                                                  <div align="center">
                                                                       <input type="text" style="width: 135px;"
                                                                            placeholder="0-10"
-                                                                           value="<?php echo $rowRatings['Activity2']; ?>">
+                                                                           value="<?php //echo $rowRatings['Activity2']; ?>">
                                                                  </div>
-                                                            </td>
+                                                            </td> -->
 
                                                             <td>
                                                                  <div align="center">
                                                                       <input name="number7" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           name="Activity2HR">
+                                                                           name="Activity2PR">
                                                                  </div>
                                                             </td>
                                                        </tr>
@@ -148,20 +144,20 @@ https://templatemo.com/tm-535-softy-pinko
                                                             <td style="text-align: center;">
                                                                  <div align="justify">Interpersonal Skills</div>
                                                             </td>
-                                                            <td>
+                                                            <!-- <td>
                                                                  <div align="center">
                                                                       <input type="text" style="width: 135px;"
                                                                            placeholder="0-10"
-                                                                           value="<?php echo $rowRatings['Activity3']; ?>">
+                                                                           value="<?php //echo $rowRatings['Activity3']; ?>">
                                                                  </div>
-                                                            </td>
+                                                            </td> -->
 
                                                             <td>
                                                                  <div align="center">
                                                                       <input name="number8" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           name="Activity3HR">
+                                                                           name="Activity3PR">
                                                                  </div>
                                                             </td>
                                                        </tr>
@@ -170,20 +166,20 @@ https://templatemo.com/tm-535-softy-pinko
                                                             <div align="justify">Communications Skills
                                                             </div>
                                                        </td>
-                                                       <td>
+                                                       <!-- <td>
                                                             <div align="center">
                                                                  <input type="text" style="width: 135px;"
                                                                       placeholder="0-10"
-                                                                      value="<?php echo $rowRatings['Activity4']; ?>">
+                                                                      value="<?php //echo $rowRatings['Activity4']; ?>">
                                                             </div>
-                                                       </td>
+                                                       </td> -->
 
                                                        <td>
                                                             <div align="center">
                                                                  <input name="number9" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
                                                                       aria-label="0-10" min="0" max="10"
-                                                                      name="Activity4HR">
+                                                                      name="Activity4PR">
                                                             </div>
                                                        </td>
                                                        </tr>
@@ -194,20 +190,20 @@ https://templatemo.com/tm-535-softy-pinko
                                                                       contributors
                                                                  </div>
                                                             </td>
-                                                            <td>
+                                                            <!-- <td>
                                                                  <div align="center">
                                                                       <input type="text" style="width: 135px;"
                                                                            placeholder="0-10"
-                                                                           value="<?php echo $rowRatings['Activity5']; ?>">
+                                                                           value="<?php //echo $rowRatings['Activity5']; ?>">
                                                                  </div>
-                                                            </td>
+                                                            </td> -->
 
                                                             <td>
                                                                  <div align="center">
                                                                       <input name="number10" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           name="Activity5HR">
+                                                                           name="Activity5PR">
                                                                  </div>
                                                             </td>
                                                        </tr>
@@ -215,7 +211,8 @@ https://templatemo.com/tm-535-softy-pinko
 
                                                   </tbody>
                                              </table>
-                                             <p><span>HOD remarks: </span>: <input type="text" style="width:400px;"></p>
+                                             <p><span>Director/Principal remarks: </span>: <input type="text"
+                                                       style="width:400px;"></p>
                                              <br>
                                              <br>
                                              <div class="text-center">
@@ -229,6 +226,7 @@ https://templatemo.com/tm-535-softy-pinko
 
 
                                    </div>
+                              </form>
                          </div>
                     </div>
                     <?php

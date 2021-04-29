@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 require_once('../connection.php');
 
 $varA1HR = $_POST['Activity1HR'];
@@ -14,6 +14,6 @@ $updateHODRatingsQuery = "UPDATE section_iv set Activity1HR = '$varA1HR',Activit
 $executeUpdateHODRatingsQuery = mysqli_query($con,$updateHODRatingsQuery);
 
 if($executeUpdateHODRatingsQuery){
-     header('Location:../form4director1.php?userId='.$varUserId);
+     header('Location:../form4self(1).php?userId='.$varUserId);
 }
 ?>

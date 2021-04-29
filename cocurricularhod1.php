@@ -70,7 +70,22 @@ https://templatemo.com/tm-535-softy-pinko
                          <div class="bio-graph-heading">
                               FORM B (Section 3)
                          </div>
+                         <?php
+                              $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
+                              $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
+                              $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
+                              if($rowStatus['SectionIII'] == 0){                                                    
+                         ?>
                          <div class="panel-body bio-graph-info">
+                              <center>
+                                   <h3>Employee has not filled this form</h3>
+                              </center>
+                              <a
+                                   href="contributionhod1.php?userId=<?php echo $_GET['userId'];?>"><button>Next</button></a>
+                         </div>
+                         <?php }
+                         else{ ?>
+                         <div class=" panel-body bio-graph-info">
                               <form action="controllers/formB3HODRatingController.php?userId=<?php echo $_GET['userId']; ?>"
                                    method="POST">
                                    <div class="row">
@@ -91,28 +106,33 @@ https://templatemo.com/tm-535-softy-pinko
                                                                  of activity</th>
                                                             <th scope="col" style="text-align: center;  width: 70px; ">
                                                                  Maximum API score </th>
-                                                            <th scope="col" style="text-align: center;">Self Rating</th>
-                                                            <th scope="col" style="text-align: center;">HOD Rating</th>
+                                                            <th scope="col" style="text-align: center;">Self Rating
+                                                            </th>
+                                                            <th scope="col" style="text-align: center;">HOD Rating
+                                                            </th>
                                                        </tr>
                                                   </thead>
                                                   <tbody>
                                                        <?php
                                                     $selectRatingsQuery = "Select * from section_iii where Userid = ".$_GET['userId'];
-                                                    $executeSelectRatingsQuery = mysqli_query($con,$selectRatingsQuery);
+                                                    $executeSelectRatingsQuery = mysqli_query($con, $selectRatingsQuery);
                                                     $rowRatings = mysqli_fetch_assoc($executeSelectRatingsQuery);
                                                     
                                                     ?>
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">1</th>
                                                             <td style="text-align: left;">
-                                                                 <div align="justify"><b>Students Mentorship:</b><br>
+                                                                 <div align="justify"><b>Students
+                                                                           Mentorship:</b><br>
                                                                       Contributions towards the welfare of the
-                                                                      Students(Attendance Monitoring/Communications and
+                                                                      Students(Attendance Monitoring/Communications
+                                                                      and
                                                                       maintaining the records of Attendance,
                                                                       Parent-Teacher
                                                                       Meetings, Student welfare and
                                                                       Counselling/Mentoring to
-                                                                      Students) (2 Points/activity/Sem, max. 10 points)
+                                                                      Students) (2 Points/activity/Sem, max. 10
+                                                                      points)
                                                                  </div>
                                                             </td>
                                                             <td style="text-align: center;">10</td>
@@ -138,10 +158,12 @@ https://templatemo.com/tm-535-softy-pinko
                                                                       Service
                                                                       activities like Unnat Bharat Abhiyan, Rural
                                                                       Immersion
-                                                                      program, Guest speaker, Students industry visits
+                                                                      program, Guest speaker, Students industry
+                                                                      visits
                                                                       as
                                                                       study tours both national and international,
-                                                                      Internships (2 Points/activity/Semester, Max 05
+                                                                      Internships (2 Points/activity/Semester, Max
+                                                                      05
                                                                       points)
                                                                  </div>
                                                             </td>
@@ -164,12 +186,14 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">3</th>
                                                             <td style="text-align: left;">
-                                                                 <div align="justify">Involvement in development of the
+                                                                 <div align="justify">Involvement in development of
+                                                                      the
                                                                       School/Faculty/University through active
                                                                       participation
                                                                       in Academic Advisory/BoS/Academic Council/any
                                                                       other
-                                                                      Academic/Administrative Committee (2 points max.
+                                                                      Academic/Administrative Committee (2 points
+                                                                      max.
                                                                       05
                                                                       points all together) </div>
                                                             </td>
@@ -194,15 +218,19 @@ https://templatemo.com/tm-535-softy-pinko
                                                             <td style="text-align: left;">
                                                                  <div align="justify"><b>Professional
                                                                            Development:</b><br>
-                                                                      <b>a.</b> Awards/Recognition/Any other achievement
+                                                                      <b>a.</b> Awards/Recognition/Any other
+                                                                      achievement
                                                                       through professional bodies of
                                                                       national/international
-                                                                      repute(e.g. Best Teacher, Young Scientist award
+                                                                      repute(e.g. Best Teacher, Young Scientist
+                                                                      award
                                                                       given;
                                                                       (2 Points for each Award)) <br>
-                                                                      <b> b.</b> Qualification improvement (Ph. D - %
+                                                                      <b> b.</b> Qualification improvement (Ph. D -
+                                                                      %
                                                                       and
-                                                                      Post Doctorate - 5) (Ph. D registered - 2) - for
+                                                                      Post Doctorate - 5) (Ph. D registered - 2) -
+                                                                      for
                                                                       every
                                                                       progress report submission - 2points (Max 10
                                                                       points all
@@ -277,6 +305,7 @@ https://templatemo.com/tm-535-softy-pinko
                                         </div>
                               </form>
                          </div>
+                         <?php } ?>
                     </div>
                </div>
           </div>

@@ -22,44 +22,41 @@ if(isset($_POST['flag'])){
           $status = 0;
           $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
           if($rowStatus['SectionI'] == 1){
-               $status += 20; 
+               $status += 25; 
           }
           if($rowStatus['SectionII'] == 1){
-               $status += 20; 
+               $status += 25; 
           }
           if($rowStatus['SectionIII'] == 1){
-               $status += 20; 
+               $status += 25; 
           }
           if($rowStatus['SectionIV'] == 1){
-               $status += 20; 
+               $status += 25; 
           }
-          if($rowStatus['SectionV'] == 1){
-               $status += 20; 
-          }
-//            70"
-//   70%">
-//      
+          // if($rowStatus['SectionV'] == 1){
+          //      $status += 20; 
+          // }
+          
           $output .= '<td style="text-align: center;"><div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'.$status.'" aria-valuemin="0" aria-valuemax="100" style="width:'.$status.'%">'.$status.'%</div></div></td>';
           $output .= "</tr>";
+          $i += 1;
         }
      //    echo json_encode($return_array)
      echo $output;
      }
+     else if($_POST['flag'] == 'selectDep'){
+          $depValue = str_replace("+", " ", $_POST['dep']);
+        $selectDesignationQuery = " Select distinct(Designation) from login where Branch = '".$depValue."'";
+        $executeSelectDesignationQuery = mysqli_query($con, $selectDesignationQuery);
+        $output = "";
+         while ($rowDesignation = mysqli_fetch_assoc($executeSelectDesignationQuery)) {
+              $output .= "<option value='".$rowDesignation['Designation']."'>".$rowDesignation['Designation']."</option>";
+         }
+         echo $output;
+     }
      
 }
-if($_GET['flag']=='checkFormProgress'){
-          $selectStatusQuery = "SELECT * from status where Userid = ".$_GET['Userid'];
-          $executeSelectStatusQuery = mysqli_query($con ,$selectStatusQuery );
-          $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
-          $return_array = array();
-          if($rowStatus['SectionIII'] == 1){
-               $return_array[]=1;
-          }
-          else{
-               $return_array[]=0;
-          }
-          echo json_encode($return_array);
-     }
+
 
 // if(isset($_POST['search_post_btn']))
 // {
