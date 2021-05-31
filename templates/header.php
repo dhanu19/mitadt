@@ -271,9 +271,9 @@ header {
                                     <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
 
                                         <?php if($_SESSION['designation'] == 'Admin' ) {?>
-                                            <li><a href="reportAdmin.php"><button class="btn btn-primary" >Download</button></a></li>
+                                            <li><a href="reportAdmin.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
                                         <?php }elseif($_SESSION['designation'] == 'Principal') {?>
-                                            <li><a href="reportDirector.php"><button class="btn btn-primary" >Download</button></a></li>
+                                            <li><a href="reportDirector.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
                                         <?php }?>
                                       
                                     <?php }?>
