@@ -13,6 +13,7 @@ include('templates/header.php');
                     <div class="panel">
                          <h3 style="text-align:center">Performance Appraisal </h3>     
                     </div>
+                    <br>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM A
@@ -20,7 +21,7 @@ include('templates/header.php');
                          <br>
                          <div class="container" style="padding-top:10px; text-align:left;"><h5>PERSONAL INFORMATION</h5></div>
                          <br>
-                         <div class="panel-body bio-graph-info">
+                         <div class="panel-body bio-graph-info" style="color:black; font-size:16px;">
                               <div class="container">
                                    <form action="controllers/form_data_validation.php" method="POST"  enctype="multipart/form-data">
                                         <div class="form-row">
@@ -38,6 +39,11 @@ include('templates/header.php');
                                         <div class="form-group">
                                              <label for="fatherName">Father's Name</label>
                                              <input type="text" class="form-control" id="fatherName" name="fatherName" style="text-align:left;">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="age">Age</label>
+                                             <input type="text" class="form-control" id="age" name="age" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
@@ -102,6 +108,11 @@ include('templates/header.php');
                                         <div class="form-group">
                                              <label for="email">Email</label>
                                              <input type="email" class="form-control" id="email" name="email" style="text-align:left;">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="doj">Date of Joining</label>
+                                             <input type="date" class="form-control" id="doj" name="doj" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">

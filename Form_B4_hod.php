@@ -16,6 +16,8 @@ include('templates/header.php');
                          <h3 style="text-align:center">Performance Appraisal </h3>
                                    
                     </div>
+
+                    <br>
                     <div class="panel" id="contentBody">
                          <div class="bio-graph-heading">
                               FORM B (Section 4)

@@ -18,6 +18,7 @@ include('templates/header.php');
                          <h3 style="text-align:center">Performance Appraisal </h3>
                                    
                     </div>
+                    <br>
                          <div class="panel-body bio-graph-info">
                               <form action="controllers/formB5PrincipalRatingController.php?userId=<?php echo $_GET['userId']; ?>"
                                    method="POST">
