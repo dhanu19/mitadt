@@ -247,7 +247,7 @@ header {
                                             </li>
                                         <?php } ?>
                                     <?php }?>
-                                        
+                                    
                                     
                                     
 
@@ -266,6 +266,13 @@ header {
                                         <li class="nav-item">
                                             <a class="nav-link" href="login.php" style="color: white;">Login</a>
                                         </li>
+                                    <?php }?>
+
+                                    <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
+                                        <?php if($_SESSION['designation'] == 'Admin' || $_SESSION['designation'] == 'Principal' ) {?>
+                                            <li><button class="btn btn-primary mr-auto" href="">Download</button></li>
+                                            <?php } ?>
+                                    
                                     <?php }?>
                                 </ul>
                             </div>
