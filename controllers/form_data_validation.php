@@ -1,7 +1,6 @@
-<!-- DATABASE CONNECTION CODE-->
 <?php
 session_start();
-$servername = 'localhost';
+$servername = 'localhost:3307';
 $username = 'root';
 $password = '';
 $dbname = 'mitadt';
@@ -13,19 +12,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-?>
-<!-- DATABASE CONNECTION CODE END-->
-
-
-
-
-
-
-
-<!-- INSERT CODE-->
-<?php
-
 $firstName = $lastName = $name = $fatherName = $age = $dob = $gender = $dependents = $maritalStatus = $nationality = $religion = $email = "";
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
@@ -47,44 +35,73 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"];
     $mobile = $_POST["mobile"];
 
+    $file=$_FILES["profilePhoto"];
+    
+    $fileName = $_FILES['profilePhoto']['name'];
+    $fileTmpName = $_FILES['profilePhoto']['tmp_name'];
+    $fileSize = $_FILES['profilePhoto']['size'];
+    $fileErro = $_FILES['profilePhoto']['error'];
+    $fileType = $_FILES['profilePhoto']['type'];
+
+    $fileExtTmp=explode('.',$fileName);
+    $fileExt= strtolower(end($fileExtTmp));
+    $allow = array('jpg','jpeg','png','svg');
+    $str = "";
+
     $_SESSION['userName'] = $name;
     $_SESSION['userEmail'] = $email;
 	
     // echo $name;
     $varUserId = $_SESSION['userId'];
 
-	$query = " insert into personaldetails(Userid,NameOfFacultyMember,FatherName, DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion) values 
-    ('$varUserId','$name','$fatherName', '$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion') ";
-
-	mysqli_query($conn,$query);
-    $updateLoginStatusQuery = "UPDATE login set LoginStatus = 1 where id = '$varUserId'";
-    mysqli_query($conn,$updateLoginStatusQuery);
-
-    $insertStatusQuery = "Insert into status(Userid,SectionI,SectionII,SectionIII,SectionIV,SectionV) VALUES('$varUserId',0,0,0,0,0)";
-    mysqli_query($conn,$insertStatusQuery);
-
-    // header('location:../formB1self.php');
-    $selectDesignationQuery = "SELECT * from login where id = '$varUserId'";
-    $executeSelectDesignationQuery = mysqli_query($conn, $selectDesignationQuery);
-    $rowDesignation = mysqli_fetch_assoc($executeSelectDesignationQuery);
-    if($rowDesignation['Designation'] == 'Admin'){
-                //redirect to admin dashboard
-                header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
-            }elseif($rowDesignation['Designation'] == 'Principal Dean (R&D)'){
-                //redirect to principal dashboard
-                header('location:../principal.php'); // redirect to registration page //tell to add designation
-            }elseif($rowDesignation['Designation'] == 'Professor (HOD)'){
-                //redirect to hod dashboard
-                header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
-            }else{
-                //redirect to assistant professor dashboard
-                header('location:../dashboardself.php'); // redirect to registration page //tell to add designation
+    if (!empty($fileExt)) {
+        if (in_array($fileExt,$allow)) {
+            if ($fileErro === 0) {
+                
+                    $fileNewName = $varUserId.'_'.$name.".".$fileExt;
+                    $path = "../assets/images/profile";
+                    if (!file_exists($path)) {
+                        mkdir($path, 0777, true);
+                    }
+                    $fileDestination = '../assets/images/profile/'.$fileNewName;
+                    move_uploaded_file($fileTmpName,$fileDestination);
+                    $str=substr($fileDestination,3);
+                
             }
-}else{
-    header('location:../index.php');
+            else {
+                // $_SESSION['msg']="There is error while uploading a image!";
+                // header("Location: ../subject.php?class=$varClass&subject=$varSubject");
+                return;
+            }
+        }
+        else {
+            // $_SESSION['msg']="file with this extension is not allowed!!";
+            // header("Location: ../subject.php?class=$varClass&subject=$varSubject");
+            return;
+        }
+    }
+    else{
+        // $_SESSION["return"] = "Error! Please Select Logo File!";
+        // header("Location: ../subject.php?class=$varClass&subject=$varSubject");
+        return;
+    }
+
+	$query = " insert into personaldetails(Userid,NameOfFacultyMember,FatherName,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion,profilePhoto) values('$varUserId','$name','$fatherName', '$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion','$str') ";
+
+	
+    $updateLoginStatusQuery = "UPDATE login set LoginStatus = 1 where id = '$varUserId'";
+    
+
+    $insertStatusQuery = "Insert into status(Userid,SectionI,SectionII,SectionIII,SectionIV,SectionIHOD,SectionIIHOD,SectionIIIHOD,SectionIVHOD,SectionVHOD,SectionIPrincipal,SectionIIPrincipal,SectionIIIPrincipal,SectionIVPrincipal,SectionVPrincipal) VALUES('$varUserId',0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+    
+
+    if(mysqli_query($conn,$query) AND mysqli_query($conn,$updateLoginStatusQuery) AND mysqli_query($conn,$insertStatusQuery)){
+        header('location:../register2.php');
+        // alert("Success");
+    }
+    else{
+        // alert("Error");
+        header('location:../register.php');
+    }
 }
-
-
-
 ?>
-<!-- INSERT CODE END-->

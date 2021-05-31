@@ -36,34 +36,22 @@ https://templatemo.com/tm-535-softy-pinko
 
 <body>
 
-
-
-
      <?php
         include('headerself.php');
     ?>
      </div>
      <div class="container bootstrap snippets bootdey">
           <div class="row">
-               <div class="profile-nav col-md-3">
-                    <div class="panel">
-                         <div class="user-heading round">
-                              <a href="#">
-                                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                              </a>
-                              <h1>Camila Smith</h1>
-                              <p>deydey@theEmail.com</p>
-                         </div>
-
-
-                    </div>
+               <div>
+                    <?php
+                    include('profile.php');
+                    ?>
                </div>
                <div class="profile-info col-md-9">
                     <div class="panel">
-                         <form>
-                              <textarea placeholder="Performance Appraisal" rows="2"
-                                   class="form-control input-lg p-text-area"></textarea>
-                         </form>
+                         
+                         <h3 style="text-align:center">Performance Appraisal </h3>
+                                   
                     </div>
                     <div class="panel">
                          <div class="bio-graph-heading">

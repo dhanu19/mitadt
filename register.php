@@ -13,7 +13,7 @@ require_once('connection.php');
      <meta name="author" content="">
      <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
 
-     <title>contributionself</title>
+     <title>REGISTER</title>
      <!--
 SOFTY PINKO
 https://templatemo.com/tm-535-softy-pinko
@@ -47,41 +47,31 @@ https://templatemo.com/tm-535-softy-pinko
      </div>
      <div>
           <?php
-        // include('headerdirector.php');
+        include('templates/header.php');
     ?>
      </div>
      <div class="container bootstrap snippets bootdey">
           <div class="row">
-               <div class="profile-nav col-md-3">
-                    <div class="panel">
-                         <div class="user-heading round">
-                              <a href="#">
-                                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                              </a>
-                              <h1>Camila Smith</h1>
-                              <p>deydey@theEmail.com</p>
-                         </div>
-
-
-                    </div>
+               <div>
+                    <?php
+                    include('profile.php');
+                    ?>
                </div>
                <div class="profile-info col-md-9">
                     <div class="panel">
-                         <form>
-                              <textarea placeholder="Performance Appraisal" rows="2"
-                                   class="form-control input-lg p-text-area"></textarea>
-                         </form>
-
+                         
+                         <h3 style="text-align:center">Performance Appraisal </h3>
+                                   
                     </div>
                     <div class="panel">
                          <div class="bio-graph-heading">
-                              FROM B
+                              FORM A
                          </div>
 
                          <div class="panel-body bio-graph-info">
                               <h1>PERSONAL INFORMATION</h1>
                               <!--form start -->
-                              <form action="controllers/form_data_validation.php" method="POST">
+                              <form action="controllers/form_data_validation.php" method="POST"  enctype="multipart/form-data">
                                    <div class="row">
                                         <div class="bio-row">
                                              <p><span>First Name </span> <input class="input" name="firstName" /></p>
@@ -100,14 +90,23 @@ https://templatemo.com/tm-535-softy-pinko
                                              <p><span>Date of birth</span><input type="date" name="dob" /></p>
                                         </div>
                                         <div class="bio-row">
-                                             <p><span>Gender</span> <input class="input" name="gender" /></p>
+                                             <p><span>Gender</span> 
+                                                  <select class="input" name="gender">
+                                                       <option value="0">Choose Gender...</option>
+                                                       <option value="Male">Male</option>
+                                                       <option value="Female">Female</option>
+                                                       <option value="Other">Other</option>
+                                                  </select>
+                                                       <!-- <input class="input" name="gender" /></p> -->
                                         </div>
                                         <div class="bio-row">
-                                             <p><span>Departments</span> <input class="input" name="departments" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Marital Status:</span> <input class="input"
-                                                       name="maritalStatus" /></p>
+                                             <p><span>Marital Status:</span>
+                                             <select class="input" name="maritalStatus">
+                                                  <option value="0">Choose Marital Status</option>
+                                                  <option value="Married">Married</option>
+                                                  <option value="Unmarried">Unmarried</option>
+                                             </select> 
+                                                  <!-- <input class="input" name="maritalStatus" /></p> -->
                                         </div>
                                         <div class="bio-row">
                                              <p><span>Nationality</span> <input class="input" name="nationality" /></p>
@@ -120,10 +119,6 @@ https://templatemo.com/tm-535-softy-pinko
                                         </div>
                                         <div class="bio-row">
                                              <p><span>Sub-Category</span> <input class="input" name="subCategory" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>School name and department name</span> <input class="input"
-                                                       name="schoolDeptName" /></p>
                                         </div>
                                         <div class="bio-row">
                                              <p><span>Permanent Address </span><textarea class="form-control"
@@ -176,30 +171,20 @@ https://templatemo.com/tm-535-softy-pinko
 
 
                                    <br>
-                                   <script src="jquery-1.11.3.js"></script>
-                                   <script>
-                                   $(document).ready(function() {
-                                        $("#watch-me").click(function() {
-                                             $("#show-me:hidden").show('slow');
-                                        });
-                                        $("#no-watch").click(function() {
-                                             $("#show-me").hide();
-                                        });
-                                        $("#watch-me").click(function() {
-                                             if ($('watch-me').prop('checked') === false) {
-                                                  $('#show-me').hide();
-                                             }
-                                        });
-                                   });
-                                   </script>
                                    <div class="bio-row">
                                         <p><span>Phone Number</span>: <input type="tel" name="mobile" id="phn"
                                                   value="" /></p>
                                    </div>
                                    <div class="bio-row">
-                                        <p><span>Password:</span>: </p>
-                                        <div class="center">
-                                             <div class="form">
+                                        <p><span>Password:</span>: <input type="password" id="pwd" name="pwd" value="<?php echo @$_COOKIE['cpass'];?>" required>
+                                                            <i id="ipass" class="fa fa-eye" style="padding-top: 15px;" onclick="hideshowpass()"></i></p>
+                                        <!-- <div class="center"> -->
+                                             <!-- <div class="form-element"> -->
+                                                  
+                                                            
+                                                       
+                                                  <!-- </div> -->
+                                             <!-- <div class="form">
                                                   <div class="form-element">
                                                        <input type="password" id="password-field">
                                                        <div class="toggle-password">
@@ -221,8 +206,8 @@ https://templatemo.com/tm-535-softy-pinko
                                                             </div>
                                                        </div>
                                                   </div>
-                                             </div>
-                                        </div>
+                                             </div> -->
+                                        <!-- </div> -->
                                    </div>
 
 
@@ -233,10 +218,15 @@ https://templatemo.com/tm-535-softy-pinko
                                                   year:</span></span> <input class="input" value="" /></p>
 
                                    </div>
+                                   <div class="panel-body bio-graph-info">
+                                   
+                                   <p><span>UPLOAD PHOTO       </span></p>
+                                   <input type="file" id="myFile" name="profilePhoto">
+                                   
+                                   
+                                   </div>
 
-
-
-                                   <div class="text-center">
+                                   <div class="panel-body bio-graph-info">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                    </div>
 
@@ -245,8 +235,8 @@ https://templatemo.com/tm-535-softy-pinko
 
 
                          </div>
-                         <!-- <div class="align-right">
-                              <a href="blank - Form B2-DIRECTORR.php"><button class="btn btn-primary "
+                        <!--  <div class="align-right">
+                              <a href="blank - Form B2 - SELFR.php"><button class="btn btn-primary "
                                         type="link">NEXT</button></a>
 
                          </div> -->
@@ -257,18 +247,46 @@ https://templatemo.com/tm-535-softy-pinko
 
           </div>
      </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
+
      <div>
           <?php
-        include ('footer.php');
+        include ('templates/footer.php');
         ?>
      </div>
+
+     <script src="jquery-1.11.3.js"></script>
+     <script>
+               function hideshowpass() {
+                 var txtPassword = document.getElementById('pwd');
+                 if (txtPassword.type === "password") {
+                    txtPassword.type="text";
+
+                    var p1 = document.getElementById('ipass');
+                    p1.setAttribute('class', 'fa fa-eye-slash');
+                 }
+                 else{
+                    txtPassword.type="password";
+
+                    var p1 = document.getElementById('ipass');
+                    p1.setAttribute('class', 'fa fa-eye');
+                 }
+             }
+          </script>
+     <script>
+          $(document).ready(function() {
+               $("#watch-me").click(function() {
+                    $("#show-me:hidden").show('slow');
+               });
+               $("#no-watch").click(function() {
+                    $("#show-me").hide();
+               });
+               $("#watch-me").click(function() {
+                    if ($('watch-me').prop('checked') === false) {
+                         $('#show-me').hide();
+                    }
+               });
+          });
+     </script>
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
      <script type="text/javascript">
@@ -312,8 +330,6 @@ https://templatemo.com/tm-535-softy-pinko
      <!-- Global Init -->
      <script src="assets/js/custom.js"></script>
      <!--  -->
-
-
 
 </body>
 

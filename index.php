@@ -1,141 +1,11 @@
-<?php 
-require_once('connection.php');
 
-?>
-<!DOCTYPE html>
-<html lang="en">
+     <div>
+     <?php 
+     require_once('connection.php');
+     include('templates/header.php');
+     ?>
+     <div>
 
-<head>
-
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <meta name="description" content="">
-     <meta name="author" content="">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-
-     <title>Amit</title>
-
-
-     <!-- Additional CSS Files -->
-     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-
-     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
-     <meta charset='utf-8'>
-     <meta name='viewport' content='width=device-width, initial-scale=1'>
-     <title>Login</title>
-     <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
-     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-     <style>
-     .dropbtn {
-          background-color: white;
-          color: black;
-          padding: 8px;
-          font-size: 15px;
-          border: none;
-          cursor: pointer;
-     }
-
-     .dropdown {
-          position: inherit;
-          display: inline-block;
-     }
-
-     .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: white;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-     }
-
-     .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-     }
-
-     .dropdown-content a:hover {
-          background-color: white
-     }
-
-     .dropdown:hover .dropdown-content {
-          display: block;
-     }
-
-     .dropdown:hover .dropbtn {
-          background-color: white;
-     }
-     </style>
-</head>
-
-<body>
-
-     <!-- ***** Preloader Start ***** -->
-     <div id="preloader">
-          <div class="jumper">
-               <div></div>
-               <div></div>
-               <div></div>
-          </div>
-     </div>
-     <!-- ***** Preloader End ***** -->
-
-
-     <!-- ***** Header Area Start ***** -->
-     <header class="header-area header-sticky">
-          <div class="container">
-               <div class="row">
-                    <div class="col-12">
-                         <nav class="main-nav">
-                              <!-- ***** Logo Start ***** -->
-                              <a href="#" class="logo">
-                                   <img src="assets/images/logo.jpg" alt="Softy Pinko" />
-                              </a>
-                              <!-- ***** Logo End ***** -->
-                              <!-- ***** Menu Start ***** -->
-                              <ul class="nav">
-                                   <li><a href="index.php" class="active">Home</a></li>
-                                   <li>
-                                        <div class="dropdown">
-                                             <button class="dropbtn">Register</button>
-                                             <div class="dropdown-content">
-                                                  <a href="register-self.php">Self</a>
-                                                  <a href="register-HOD.php">HOD</a>
-                                                  <a href="register.php">Director</a>
-                                                  <br>
-                                             </div>
-
-                                   <li>
-                                        <div class="dropdown">
-                                             <button class="dropbtn">Log-In</button>
-                                             <div class="dropdown-content">
-                                                  <a href="loginself.php">Self</a>
-                                                  <a href="login - HOD.php">HOD</a>
-                                                  <a href="login.php">Director</a>
-                                                  <br>
-                                             </div>
-
-
-                                   </li>
-                                   <li><a href="#testimonials">Testimonials</a></li>
-                                   <li><a href="#pricing-plans">Pricing Tables</a></li>
-                                   <li><a href="#blog">Awards</a></li>
-                                   <li><a href="contact.php">Contact Us</a></li>
-                              </ul>
-                              <a class='menu-trigger'>
-                                   <span>Menu</span>
-                              </a>
-                              <!-- ***** Menu End ***** -->
-                         </nav>
-                    </div>
-               </div>
-          </div>
-     </header>
-     <!-- ***** Header Area End ***** -->
 
      <!-- ***** Welcome Area Start ***** -->
      <div class="welcome-area" id="welcome">
@@ -143,6 +13,7 @@ require_once('connection.php');
           <!-- ***** Header Text Start ***** -->
           <div class="header-text">
                <div class="container">
+                    
                     <div class="row">
                          <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
                               <h1><strong>MIT Art, Design, and Technology University</strong></h1>
@@ -469,29 +340,13 @@ require_once('connection.php');
 
 
      <!-- ***** Footer Start ***** -->
-     <footer>
-          <div class="container">
-               <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                         <ul class="social">
-                              <li><a href="https://www.facebook.com/mitadtuniversity/"><i
-                                             class="fa fa-facebook"></i></a></li>
-                              <li><a href="https://www.instagram.com/mitadtuniversity/?hl=en"><i
-                                             class="fa fa-instagram"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                              <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                         </ul>
-                    </div>
+     <div>
+                    <?php
+                    include ('templates/footer.php');
+                    ?>
                </div>
-               <div class="row">
-                    <div class="col-lg-12">
-                         <p class="copyright">Copyright &copy; 2021 MitRecruiter - Design:-TeamSOE</p>
-                    </div>
-               </div>
-          </div>
-     </footer>
 
+</div>
      <!-- jQuery -->
      <script src="assets/js/jquery-2.1.0.min.js"></script>
 
@@ -508,6 +363,3 @@ require_once('connection.php');
      <!-- Global Init -->
      <script src="assets/js/custom.js"></script>
 
-</body>
-
-</html>

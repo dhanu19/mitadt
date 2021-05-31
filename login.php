@@ -1,116 +1,77 @@
-<?php 
-require_once('connection.php');
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <meta name="description" content="">
-     <meta name="author" content="">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-
-     <title>FORM A (Section 1)</title>
-     <!--
-SOFTY PINKO
-https://templatemo.com/tm-535-softy-pinko
--->
-
-     <!-- Additional CSS Files -->
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
-
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css"> -->
-
-     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
-
-
-
-     <link rel="stylesheet" href="assets/css/loginstyle.css">
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
 
      <?php
-        include('headerdirector.php');
-    ?>
-     </div>
-     <div class="card card0 border-0">
-          <div class="row d-flex">
-               <div class="col-lg-6">
-                    <div class="card1 pb-5">
-                         <div class="row">
-                              <div></div>
-                         </div>
-                         </br>
-                         </br>
-                         <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img
-                                   src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+     require_once('connection.php');
+          include ('templates/header.php');
+     ?>
+
+
+     <div class="container login_form bootstrap snippets bootdey">
+          <div class="row">
+
+                    <div class="col col-md-6 col-lg-6 login_form_image">
+                         <img width="100%" src="https://i.imgur.com/uNGdWHi.png" class="image">
                     </div>
-               </div>
-               <div class="col-lg-6">
-                    <div class="card2 card border-0 px-4 py-5">
-                         <div class="row mb-4 px-3">
-                              <h6 class="mb-0 mr-4 mt-2"></h6>
-                              <div class="">
+                    
+                    <div class="col col-12 col-md-6 col-lg-6 login_form_form">
+                         <!-- -->
+                         <div >
+                              <form action="controllers/login_validation.php" class="sign-in-form" method="POST">
+                                   <div class="form-outline mb-4">
+                                        <h3>Login</h3>
+                                   </div>
+                                   <!-- Aadhar number input -->
+                                   <div class="form-outline mb-4">
+                                        <label class="form-label" for="aadharno">Adhar Card Number: </label>
+                                        <input type="number" name="aadharno"  id="aadharno" class="form-control" style="text-align:left;" required/>
+                                   </div>
 
-                              </div>
-                              <div class="">
+                                   <!-- Password input -->
+                                   <div class="form-outline mb-4">
+                                        <label class="form-label" for="password">Password</label>
+                                        <button id="toggle-password"  style=" color: black; font-size: small; text-align: right; align-self: auto;" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show
+                                                  Password</button>
+                                        <input type="password" name="password" id="password" class="form-control" style="text-align:left;" required/>
+                                   </div>
 
-                              </div>
-                              <div class="">
+                                   <!-- 2 column grid layout for inline styling -->
+                                   <div class="row mb-4">
+                                        <div class="col">
+                                             <!-- Simple link -->
+                                             <a href="#!">Forgot password?</a>
+                                        </div>
+                                   </div>
 
-                              </div>
+                                   <!-- Submit button -->
+                                   <button type="submit" value="login" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                                   <!-- Register buttons -->
+                                   <div class="text-center">
+                                        <p>Not a member? <a href="signup.php">Register</a></p>
+                                   </div>
+                              </form>
+
+
+
+                              
                          </div>
-                         <div class="row px-3 mb-4">
-
-                         </div>
-                         <form action="controllers/login_validation.php" class="sign-in-form" method="POST">
-                              <div class="row px-3">
-                                   <label class="mb-1">
-                                        <h6 class="mb-0 text-sm">Adhaar Number</h6>
-                                   </label>
-                                   <!-- <input type="number" name="aadharno" min="0" max="100" step="5" class="mb-4" type="number" placeholder="Enter Adhaar Number" required> -->
-                                   <input type="number" name="aadharno" class="mb-4" type="number"
-                                        placeholder="Enter Adhaar Number" required>
-                              </div>
-                              <div class="row px-3">
-                                   <label class="mb-1">
-                                   </label>
-                                   <section>
-                                        <label for="password">Password</label>
-                                        <button id="toggle-password"
-                                             style=" color: black; font-size: small; text-align: right; align-self: auto;"
-                                             type="button"
-                                             aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show
-                                             password</button>
-                                        <input id="password" name="password" type="password"
-                                             placeholder="Enter Password" autocomplete="current-password" required>
-                                   </section>
-                              </div>
-                              <div class="row px-3 mb-4">
-
-                              </div>
-                              <br>
-                              <!--<input type="submit" value="login" name="login" class="btn btn-success">-->
-                              <div class="row mb-3 px-3"> <button type="submit" value="login"
-                                        class="btn btn-blue text-center">Login</button> </div>
-                              <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a
-                                             href="register.html" class="text-danger">Register</a></small> </div>
+                         <!-- -->
                     </div>
-               </div>
+
           </div>
-          </form>
-     </div>
-     </div>
      </div>
 
+
+
+
+
+
+          <?php
+          include ('templates/footer.php');
+        ?>
+
+
+
+     </div>
      <script src="assets/js/custom.js"></script>
      <script>
      const passwordInput = document.getElementById('password');
@@ -133,21 +94,11 @@ https://templatemo.com/tm-535-softy-pinko
           }
      }
      </script>
-     </div>
-     </div>
-     </div>
-     <div>
-          <?php
-        include ('footer.php');
-        ?>
-     </div>
+     
+     
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-     <script type="text/javascript">
 
-     </script>
-     </br>
-     </br>
 
 
      <!-- jQuery -->
@@ -167,8 +118,3 @@ https://templatemo.com/tm-535-softy-pinko
      <script src="assets/js/custom.js"></script>
      <!--  -->
 
-
-
-</body>
-
-</html>

@@ -10,10 +10,16 @@ $varA3ER = $_POST['Activity3ER'];
 $varA4ER = $_POST['Activity4ER'];
 $varA5ER = $_POST['Activity5ER'];
 $varA6ER = $_POST['Activity6ER'];
-$varUserId = $_GET['userId'];
+$varUserId = $_SESSION['userId'];
+$vartitleCourses = $_POST['titleCourses'];
+$varAssignedLectures = $_POST['a_lectures'];
+$varTakenLectures = $_POST['t_lectures'];
+$vartitlePracticals = $_POST['titlePracticals'];
+$varAssignedPracticals = $_POST['a_practicals'];
+$varTakenPracticals = $_POST['t_practicals'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER + $varA5ER + $varA6ER);
 
-$insertEmpRatingsQuery = "INSERT into section_i(Userid,Activity1,Activity2,Activity3,Activity4,Activity5,Activity6,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varA5ER','$varA6ER','$varTotalEmpRating')";
+$insertEmpRatingsQuery = "INSERT into section_i(Userid,Activity1,Activity2,Activity3,Activity4,Activity5,Activity6,titleCourses,lectures,takenLectures,titlePractical,practicals,takenPracticals,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varA5ER','$varA6ER','$vartitleCourses','$varAssignedLectures','$varTakenLectures','$vartitlePracticals','$varAssignedPracticals','$varTakenPracticals','$varTotalEmpRating')";
 
 // $updateEmpRatingsQuery = "UPDATE section_i set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',Activity5 = '$varA5ER',Activity6 = '$varA6ER',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
 $executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
@@ -22,7 +28,7 @@ if($executeInsertEmpRatingsQuery){
      $updateStatusQuery = "Update Status set SectionI = 1 where Userid = '$varUserId'";
      $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
      if ($executeUpdateStatusQuery) {
-         header('Location:../researchself1.php?userId='.$varUserId);
+         header('Location:../Form_B2_self.php?userId='.$varUserId);
      }
 }
 ?>

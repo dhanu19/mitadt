@@ -9,7 +9,7 @@ $varA2ER = $_POST['Activity2ER'];
 $varA3ER = $_POST['Activity3ER'];
 $varA4ER = $_POST['Activity4ER'];
 $varA5ER = $_POST['Activity5ER'];
-$varUserId = $_GET['userId'];
+$varUserId = $_SESSION['userId'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER + $varA5ER );
 
 $insertEmpRatingsQuery = "INSERT into section_ii(Userid,Activity1,Activity2,Activity3,Activity4,Activity5,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varA5ER','$varTotalEmpRating')";
@@ -21,7 +21,7 @@ if($executeInsertEmpRatingsQuery){
      $updateStatusQuery = "Update Status set SectionII = '1' where Userid = '$varUserId'";
      $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
      if ($updateStatusQuery) {
-         header('Location:../cocurricularself1.php?userId='.$varUserId);
+         header('Location:../Form_B3_self.php?userId='.$varUserId);
      }
 }
 ?>

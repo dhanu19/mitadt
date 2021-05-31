@@ -4,51 +4,147 @@
 require_once('../connection.php');
 
 if(isset($_POST['flag'])){
-     if($_POST['flag'] == 'selectDesg'){
+      if($_POST['flag'] == 'selectInstitution'){
+
+        $institutionValue = str_replace("+", " ", $_POST['institution']);
+        $selectDepartmentQuery = " Select distinct(Branch) from login where institution = '".$institutionValue."'";
+        $executeSelectDepartmentQuery = mysqli_query($con, $selectDepartmentQuery);
+        $output = "<option value=0>Choose Department</option>";
+         while ($rowDepartment = mysqli_fetch_assoc($executeSelectDepartmentQuery)) {
+              $output .= "<option value='".$rowDepartment['Branch']."'>".$rowDepartment['Branch']."</option>";
+         }
+         echo $output;
+
+      }
+      else if($_POST['flag'] == 'selectDesg'){
           
         $desgValue = str_replace("+", " ", $_POST['desg']);
-        $selectFacultyQuery = " Select * from personaldetails where Userid in (Select id from login where designation = '".$desgValue."')";
+        $selectFacultyQuery = "";
+        if(isset($_POST['dep'])){
+          $depValue = str_replace("+"," ", $_POST['dep']);
+          if(isset($_POST['institution'])){
+            $institutionValue = str_replace("+"," ", $_POST['institution']);
+            $selectFacultyQuery = " Select * from personaldetails where Userid in (Select id from login where Designation = '".$desgValue."' AND Branch = '".$depValue."' AND institution = '".$institutionValue."')";
+          }
+          else{
+            $selectFacultyQuery = " Select * from personaldetails where Userid in (Select id from login where Designation = '".$desgValue."' AND Branch = '".$depValue."')";
+          }
+        }
+        else{
+          if(isset($_POST['institution'])){
+            $institutionValue = str_replace("+"," ", $_POST['institution']);
+            $selectFacultyQuery = " Select * from personaldetails where Userid in (Select id from login where designation = '".$desgValue."' AND institution = '".$institutionValue."')";
+          }
+          else{
+            $selectFacultyQuery = " Select * from personaldetails where Userid in (Select id from login where designation = '".$desgValue."')";
+          }
+        }
         $executeSelectFacultyQuery = mysqli_query($con, $selectFacultyQuery);
-     //    $return_array = array();
           $output = "";
           $i=1;
         while($rowFaculty = mysqli_fetch_assoc($executeSelectFacultyQuery)){
-          //   $return_array[] = $rowFaculty[0];
-          $output .= "<tr id='".$rowFaculty['Userid']."'>";
-          $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
-          $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
+          
           $selectStatusQuery = "SELECT * from status where Userid = ".$rowFaculty['Userid'];
           $executeSelectStatusQuery = mysqli_query($con ,$selectStatusQuery );
           $status = 0;
-          $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
-          if($rowStatus['SectionI'] == 1){
-               $status += 25; 
+          if(mysqli_num_rows($executeSelectStatusQuery)){
+            $rowStatus = mysqli_fetch_assoc($executeSelectStatusQuery);
+            if($rowStatus['SectionI'] == 1){
+                 $status += 25;
+            }
+            if($rowStatus['SectionII'] == 1){
+                 $status += 25; 
+            }
+            if($rowStatus['SectionIII'] == 1){
+                 $status += 25; 
+            }
+            if($rowStatus['SectionIV'] == 1){
+                 $status += 25; 
+            }
           }
-          if($rowStatus['SectionII'] == 1){
-               $status += 25; 
+          if ($_SESSION['designation'] == 'Admin') {
+            if($status == 100){
+              $selectS1Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_i WHERE Userid = ".$rowFaculty['Userid'];
+              $selectS2Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_ii WHERE Userid = ".$rowFaculty['Userid'];
+              $selectS3Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_iii WHERE Userid = ".$rowFaculty['Userid'];
+              $selectS4Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_iv WHERE Userid = ".$rowFaculty['Userid']; 
+              $rowS1Total = mysqli_fetch_assoc(mysqli_query($con,$selectS1Total));
+              $rowS2Total = mysqli_fetch_assoc(mysqli_query($con,$selectS2Total));
+              $rowS3Total = mysqli_fetch_assoc(mysqli_query($con,$selectS3Total));
+              $rowS4Total = mysqli_fetch_assoc(mysqli_query($con,$selectS4Total));
+              $overallSelfRating = ($rowS1Total['TotalSelfRating'] + $rowS2Total['TotalSelfRating'] + $rowS3Total['TotalSelfRating'] + $rowS4Total['TotalSelfRating'])/4;
+              
+              $overallHODRating = ($rowS1Total['TotalHODRating'] + $rowS2Total['TotalHODRating'] + $rowS3Total['TotalHODRating'] + $rowS4Total['TotalHODRating'])/4;
+
+              $overallPrincipalRating = ($rowS1Total['TotalDirectorPrincipalRating'] + $rowS2Total['TotalDirectorPrincipalRating'] + $rowS3Total['TotalDirectorPrincipalRating'] + $rowS4Total['TotalDirectorPrincipalRating'])/4;
+
+              $output .= "<tr id='".$rowFaculty['Userid']."'>";
+              $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
+              $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
+              $output .= '<td style="text-align: center;">'.$overallSelfRating.'</td>';
+              $output .= '<td style="text-align: center;">'.$overallHODRating.'</td>';
+              $output .= '<td style="text-align: center;">'.$overallPrincipalRating.'</td>';
+              $output .= "</tr>";
+              $i += 1;
+            }
           }
-          if($rowStatus['SectionIII'] == 1){
-               $status += 25; 
+          else if($_SESSION['designation'] == 'Principal'){
+            if($status == 100){
+              $output .= "<tr id='".$rowFaculty['Userid']."'>";
+              $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
+              $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
+              $output .= '<td style="text-align: center;"><div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'.$status.'" aria-valuemin="0" aria-valuemax="100" style="width:'.$status.'%">'.$status.'%</div></div></td>';
+              $output .= "</tr>";
+              $i += 1;
+            }
+          }else{
+            $output .= "<tr id='".$rowFaculty['Userid']."'>";
+            $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
+            $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
+            $output .= '<td style="text-align: center;"><div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'.$status.'" aria-valuemin="0" aria-valuemax="100" style="width:'.$status.'%">'.$status.'%</div></div></td>';
+            $output .= "</tr>";
+            $i += 1;
+
+            // $selectS1Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_i WHERE Userid = ".$rowFaculty['Userid'];
+            //   $selectS2Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_ii WHERE Userid = ".$rowFaculty['Userid'];
+            //   $selectS3Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_iii WHERE Userid = ".$rowFaculty['Userid'];
+            //   $selectS4Total = "SELECT TotalSelfRating,TotalHODRating,TotalDirectorPrincipalRating FROM section_iv WHERE Userid = ".$rowFaculty['Userid']; 
+            //   $rowS1Total = mysqli_fetch_assoc(mysqli_query($con,$selectS1Total));
+            //   $rowS2Total = mysqli_fetch_assoc(mysqli_query($con,$selectS2Total));
+            //   $rowS3Total = mysqli_fetch_assoc(mysqli_query($con,$selectS3Total));
+            //   $rowS4Total = mysqli_fetch_assoc(mysqli_query($con,$selectS4Total));
+            //   $overallSelfRating = ($rowS1Total['TotalSelfRating'] + $rowS2Total['TotalSelfRating'] + $rowS3Total['TotalSelfRating'] + $rowS4Total['TotalSelfRating'])/4;
+              
+            //   $overallHODRating = ($rowS1Total['TotalHODRating'] + $rowS2Total['TotalHODRating'] + $rowS3Total['TotalHODRating'] + $rowS4Total['TotalHODRating'])/4;
+
+            //   $overallPrincipalRating = ($rowS1Total['TotalDirectorPrincipalRating'] + $rowS2Total['TotalDirectorPrincipalRating'] + $rowS3Total['TotalDirectorPrincipalRating'] + $rowS4Total['TotalDirectorPrincipalRating'])/4;
+
+            //   $output .= "<tr id='".$rowFaculty['Userid']."'>";
+            //   $output .= "<th scope='row' style='text-align: center;'>".$i."</td>";
+            //   $output .= "<td style='text-align: left;'>".$rowFaculty['NameOfFacultyMember']."</td>";
+            //   $output .= '<td style="text-align: center;">'.$overallSelfRating.'</td>';
+            //   $output .= '<td style="text-align: center;">'.$overallHODRating.'</td>';
+            //   $output .= '<td style="text-align: center;">'.$overallPrincipalRating.'</td>';
+            //   $output .= "</tr>";
+            //   $i += 1;
           }
-          if($rowStatus['SectionIV'] == 1){
-               $status += 25; 
-          }
-          // if($rowStatus['SectionV'] == 1){
-          //      $status += 20; 
-          // }
           
-          $output .= '<td style="text-align: center;"><div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'.$status.'" aria-valuemin="0" aria-valuemax="100" style="width:'.$status.'%">'.$status.'%</div></div></td>';
-          $output .= "</tr>";
-          $i += 1;
         }
-     //    echo json_encode($return_array)
      echo $output;
      }
      else if($_POST['flag'] == 'selectDep'){
-          $depValue = str_replace("+", " ", $_POST['dep']);
-        $selectDesignationQuery = " Select distinct(Designation) from login where Branch = '".$depValue."'";
+      $depValue = str_replace("+", " ", $_POST['dep']);
+      $selectDesignationQuery = "";
+        if(isset($_POST['institution'])){
+          $institutionValue = str_replace("+"," ", $_POST['institution']);
+          $selectDesignationQuery = "SELECT DISTINCT(Designation) FROM login WHERE Branch = '".$depValue."' AND institution = '".$institutionValue."'";
+        }
+        else{
+          $selectDesignationQuery = " SELECT DISTINCT(Designation) FROM login WHERE Branch = '".$depValue."'";
+        }
+        
         $executeSelectDesignationQuery = mysqli_query($con, $selectDesignationQuery);
-        $output = "";
+        $output = "<option value=0>Choose Designation</option>";
          while ($rowDesignation = mysqli_fetch_assoc($executeSelectDesignationQuery)) {
               $output .= "<option value='".$rowDesignation['Designation']."'>".$rowDesignation['Designation']."</option>";
          }
@@ -88,7 +184,6 @@ if(isset($_POST['flag'])){
 //     {
 //         echo "Data not found";
 //     }
-    
 // }
 // // else if($_POST['flag'] == "selectDesg"){
 // //         $desgValue = str_replace("+", " ", $_POST['desg']);

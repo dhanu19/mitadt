@@ -1,7 +1,7 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
 session_start();
-$servername = 'localhost';
+$servername = 'localhost:3307';
 $username = 'root';
 $password = '';
 $dbname = 'mitadt';
@@ -23,11 +23,12 @@ if ($conn->connect_error) {
 <?php
 
 $aadharno = $password = "";
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 	$aadharno = $_POST["aadharno"];
 	$password = $_POST["password"]; 
-
+    
     $sql = "select * from login where AdharCard = '$aadharno' AND Password = '$password' ";
 
 	$result = mysqli_query($conn,$sql);
@@ -36,6 +37,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         session_start();
         $row = mysqli_fetch_assoc($result);
         $_SESSION['userId'] = $row['id'];
+        $_SESSION['designation']=$row['Designation'];
+        $userStatus = 'logged_in';
+        $_SESSION['userStatus'] = $userStatus;
+        $_SESSION['login'] = 1;
 
         $selectUserInfoQuery = "select * from personaldetails where Userid = ".$_SESSION['userId'];
         $executeSelectInfoQuery = mysqli_query($conn,$selectUserInfoQuery);
@@ -47,15 +52,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }        
         if($row['LoginStatus'] == 1){
             /*header('location:../index.php');*/
-    
+            
                 //all forms are filled
             if($row['Designation'] == 'Admin'){
                 //redirect to admin dashboard
                 header('location:../dashboardsuperadmin.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Principal Dean (R&D)'){
+            }elseif($row['Designation'] == 'Principal'){
                 //redirect to principal dashboard
                 header('location:../dashboarddirector.php'); // redirect to registration page //tell to add designation
-            }elseif($row['Designation'] == 'Professor (HOD)'){
+            }elseif($row['Designation'] == 'HOD'){
                 //redirect to hod dashboard
                 header('location:../dashboardHOD.php'); // redirect to registration page //tell to add designation
             }else{

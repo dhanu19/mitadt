@@ -1,75 +1,27 @@
-<?php 
-require_once('connection.php');
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <meta name="description" content="">
-     <meta name="author" content="">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-
-     <title>FORM A (Section 2)
-     </title>
-     <!--
-SOFTY PINKO
-https://templatemo.com/tm-535-softy-pinko
--->
-
-     <!-- Additional CSS Files -->
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
-
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css"> -->
-
-     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
-
-
-
-     <link rel="stylesheet" href="assets/css/dashboard.css">
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-
 
 
      <?php
-        include('headerdirector.php');
+        //include('headerdirector.php');
+        require_once('connection.php');
+        include('templates/header.php');
     ?>
-     </div>
-     <div class="container bootstrap snippets bootdey">
+
+    
+     <div class="container bootstrap snippets bootdey" style="padding: top 30px; ;">
           <div class="row">
-               <div class="profile-nav col-md-3">
-                    <div class="panel">
-                         <div class="user-heading round">
-                              <a href="#">
-                                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                              </a>
-                              <h1>Camila Smith</h1>
-                              <p>deydey@theEmail.com</p>
-                         </div>
-
-
-                    </div>
+               <div class="col-12 col-md-12 col-lg-3">
+                    <?php
+                    include('profile.php');
+                    ?>
                </div>
-               <div class="profile-info col-md-9">
+               <div class="profile-info col-md-12 col-lg-9">
                     <div class="panel">
-                         <form>
-                              <textarea placeholder="Performance Appraisal" rows="2"
-                                   class="form-control input-lg p-text-area"></textarea>
-                         </form>
+                         <div class="panel">
+                         
+                              <h3 style="text-align:center">Performance Appraisal </h3>
+                                        
+                         </div>
                     </div>
-
-
-
-
 
                     <div class="panel-body bio-graph-info">
                          <div class="flex-container">
@@ -80,25 +32,19 @@ https://templatemo.com/tm-535-softy-pinko
                               <div class="flex-item-right">
                                    <div class="dropdown">
                                         <select id="department" name="department">
-                                             <option value="0">Choose Department
-                                             </option>
+                                             <option value="0">Choose Department</option>
                                              <?php
-                                                $selectDepartmentQuery = "Select distinct(branch) from login";
+                                                $selectDepartmentQuery = "Select distinct(branch) from login WHERE branch != 'NULL'";
                                                 $executeSelectDepartmentQuery = mysqli_query($con, $selectDepartmentQuery);
                                                 while($rowDepartment = mysqli_fetch_array($executeSelectDepartmentQuery)){ 
                                                 ?>
                                              <option value="<?php echo $rowDepartment['branch']; ?>">
-                                                  <?php echo $rowDepartment['branch']; ?></option>
+                                                  <?php echo $rowDepartment['branch']; ?>
+                                             </option>
                                              <?php } ?>
                                         </select>
                                    </div>
                               </div>
-
-
-
-
-
-
                          </div>
                          <div class="panel-body bio-graph-info">
                               <div class="flex-container">
@@ -109,29 +55,18 @@ https://templatemo.com/tm-535-softy-pinko
                                         <div class="dropdown">
                                              <select id="designation" name="designation">
                                                   <option value="0">Choose Designation
-
                                              </select>
-
                                         </div>
                                    </div>
-
-
-
                               </div>
 
                               <div class="panel-body bio-graph-info">
-
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
                                              <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-
-
-
                                              <br>
                                              <form action="0" method="POST">
                                                   <table class="table " id="tableId">
-
-
                                                        <thead>
                                                             <tr>
                                                                  <th scope="col" style="text-align: left; width: 50px;">
@@ -143,7 +78,6 @@ https://templatemo.com/tm-535-softy-pinko
                                                                  <th scope="col"
                                                                       style="text-align: center;  width: 70px; ">
                                                                       Progress </th>
-
                                                             </tr>
                                                        </thead>
                                                        <tbody id="tableBody">
@@ -195,49 +129,19 @@ https://templatemo.com/tm-535-softy-pinko
 
                                                        </tbody>
                                                   </table>
-
-
-
+                                             </form>
                                         </div>
-
-
                                    </div>
                               </div>
                          </div>
                     </div>
-
-
-
-
-
                </div>
           </div>
      </div>
-     </div>
-     </div>
 
-
-
-
-
-     </div>
-     </div>
-     </div>
-     </div>
-
-
-
-
-
-
-
-
-     </div>
-     </div>
-     </div>
-     </div>
+     <div>
      <?php
-        include ('footer.php');
+        include ('templates/footer.php');
         ?>
      </div>
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -253,7 +157,7 @@ https://templatemo.com/tm-535-softy-pinko
                     flag: "selectDep"
                },
                success: function(resp) {
-                    $('#designation').append(resp);
+                    $('#designation').html(resp);
                }
           });
      });
@@ -261,12 +165,14 @@ https://templatemo.com/tm-535-softy-pinko
      <script type="text/javascript">
      $('#designation').change(function() {
           var desg = $(this).val();
+          var dep = $('#department').val();
           $.ajax({
                type: "POST",
                url: "controllers/ajax.php",
                //    dataType: "json",
                data: {
                     "desg": desg,
+                    "dep": dep,
                     flag: "selectDesg"
                },
                success: function(response) {
@@ -278,7 +184,7 @@ https://templatemo.com/tm-535-softy-pinko
                     $("#tableId tr").click(function() {
                          //  alert($(this).attr('id'));
                          window.location.href =
-                              "teachingdirector1.php?userId=" + $(this).attr('id');
+                              "Form_B1_director.php?userId=" + $(this).attr('id');
                     });
                }
           });
@@ -306,7 +212,3 @@ https://templatemo.com/tm-535-softy-pinko
      <!--  -->
 
 
-
-</body>
-
-</html>

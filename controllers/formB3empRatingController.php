@@ -9,7 +9,7 @@ $varA2ER = $_POST['Activity2ER'];
 $varA3ER = $_POST['Activity3ER'];
 $varA4ER = $_POST['Activity4ER'];
 
-$varUserId = $_GET['userId'];
+$varUserId = $_SESSION['userId'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER );
 
 $insertEmpRatingsQuery = "INSERT into section_iii(Userid,Activity1,Activity2,Activity3,Activity4,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varTotalEmpRating')";
@@ -20,6 +20,6 @@ $executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
 if($executeInsertEmpRatingsQuery){
      $updateStatusQuery = "Update status set SectionIII = 1 where Userid = '$varUserId'";
      $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
-     header('Location:../contributionself1.php?userId='.$varUserId);
+     header('Location:../Form_B4_self.php?userId='.$varUserId);
 }
 ?>

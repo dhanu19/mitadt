@@ -1,0 +1,129 @@
+
+
+/* INDEX PAGE STYLES
+*****************************************************/
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: inherit;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: white
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+}
+
+/* HEADER STYLES 
+*********************************************************/
+
+nav{
+    background-image: linear-gradient(135deg, #4b0082 0%, #a759d1 100%);
+    color: white;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: white;
+    background-color:  rgb(167, 89, 209,0.6);
+    border-radius: 0px 15px 0px 0px;
+}
+
+/* FOOTER STYLE
+*********************************************************/
+
+footer {
+    background-image: linear-gradient(135deg, #4b0082 0%, #a759d1 100%);
+    height: auto;
+    
+}
+
+thead {
+    background-color: rgb(232,232,232);
+    color: black;
+}
+
+
+.profile-nav .user-heading {
+    background-image: linear-gradient(to right bottom, #4b0082, #6821a0, #863cbf, #a456de, #c370ff);
+    /*background-image: linear-gradient(to right bottom, #4b0082, #621b95, #7931a9, #9045bd, #a759d1);*/
+    color: white;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .bio-graph-heading {
+    background-image: linear-gradient(to right bottom, #4b0082, #6821a0, #863cbf, #a456de, #c370ff);
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 40px 110px;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+.btn {
+    background-color: #5C038C;
+    border-color: #5C038C;
+}
+
+.btn:hover{
+    background-color: #B637FB;
+    border-color: #B637FB;
+    color: #5C038C;
+}
+
+.login_form{
+    padding: 50px;
+}
+.login_form_form {
+    padding: 20px;
+    
+}
+
+.main-body {
+    
+    min-height: 38.5rem;
+    align-items: center;
+}
+
+/* SIGNUP FORM
+**********************************************************/

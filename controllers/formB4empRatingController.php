@@ -8,7 +8,7 @@ $varA2ER = $_POST['Activity2ER'];
 $varA3ER = $_POST['Activity3ER'];
 $varA4ER = $_POST['Activity4ER'];
 
-$varUserId = $_GET['userId'];
+$varUserId = $_SESSION['userId'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER );
 
 $insertEmpRatingsQuery = "INSERT into section_iv(Userid,Activity1,Activity2,Activity3,Activity4,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varTotalEmpRating')";

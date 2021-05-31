@@ -14,6 +14,6 @@ $updatePrincipalRatingsQuery = "UPDATE section_iv set Activity1PR = '$varA1PR',A
 $executeUpdatePrincipalRatingsQuery = mysqli_query($con,$updatePrincipalRatingsQuery);
 
 if($executeUpdatePrincipalRatingsQuery){
-     header('Location:../form4director1.php?userId='.$varUserId);
+     header('Location:../Form_B5_director.php?userId='.$varUserId);
 }
 ?>

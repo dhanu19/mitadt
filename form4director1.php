@@ -1,77 +1,23 @@
 <?php 
 require_once('connection.php');
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <meta name="description" content="">
-     <meta name="author" content="">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-
-     <title>FORM B (Section 5)</title>
-     <!--
-SOFTY PINKO
-https://templatemo.com/tm-535-softy-pinko
--->
-
-     <!-- Additional CSS Files -->
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
-
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css"> -->
-
-     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
-
-
-
-     <link rel="stylesheet" href="assets/css/style1.css">
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-
-
-     <?php
+include('templates/header.php');
         include('headerdirector.php');
     ?>
-     </div>
-
-
 
      <div class="container bootstrap snippets bootdey">
           <div class="row">
-               <div class="profile-nav col-md-3">
-                    <div class="panel">
-                         <div class="user-heading round">
-                              <a href="#">
-                                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                              </a>
-                              <h1>Camila Smith</h1>
-                              <p>deydey@theEmail.com</p>
-                         </div>
-
-
-                    </div>
+          <div class="col-12 col-md-12 col-lg-3">
+                    <?php include('profile.php'); ?>
                </div>
-               <div class="profile-info col-md-9">
+               
+               <div class="profile-info col-md-12 col-lg-9">
+                    
                     <div class="panel">
-                         <form>
-                              <textarea placeholder="Performance Appraisal" rows="2"
-                                   class="form-control input-lg p-text-area"></textarea>
-                         </form>
+                    
+                         
+                         <h3 style="text-align:center">Performance Appraisal </h3>
+                                   
                     </div>
-                    <div class="panel">
-                         <div class="bio-graph-heading">
-                              FORM B (Section 5)
-                         </div>
                          <div class="panel-body bio-graph-info">
                               <form action="controllers/formB5PrincipalRatingController.php?userId=<?php echo $_GET['userId']; ?>"
                                    method="POST">
@@ -85,7 +31,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="col" style="text-align: center;">Sr. No. </th>
                                                             <th scope="col" style="text-align: center;">
-                                                                 <div align="justify">Parameters</div>
+                                                                 <div style="text-align: justify;">Parameters</div>
                                                             </th>
                                                             <!-- <th scope="col" style="text-align: center;">HOD Rating</th> -->
 
@@ -99,7 +45,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">1</th>
                                                             <td style="text-align: center;">
-                                                                 <div align="justify">Punctuality</div>
+                                                                 <div style="text-align: justify;">Punctuality</div>
                                                             </td>
                                                             <!-- <td>
                                                                  <div align="center">
@@ -109,7 +55,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                                  </div>
                                                             </td> -->
                                                             <td>
-                                                                 <div align="center">
+                                                                 <div style="text-align: center;">
                                                                       <input name="number6" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
@@ -120,7 +66,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">2</th>
                                                             <td style="text-align: center;">
-                                                                 <div align="justify">Integrity</div>
+                                                                 <div style="text-align: justify;">Integrity</div>
                                                             </td>
                                                             <!-- <td>
                                                                  <div align="center">
@@ -131,7 +77,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                             </td> -->
 
                                                             <td>
-                                                                 <div align="center">
+                                                                 <div style="text-align: center;">
                                                                       <input name="number7" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
@@ -142,7 +88,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">3</th>
                                                             <td style="text-align: center;">
-                                                                 <div align="justify">Interpersonal Skills</div>
+                                                                 <div style="text-align: justify;">Interpersonal Skills</div>
                                                             </td>
                                                             <!-- <td>
                                                                  <div align="center">
@@ -153,7 +99,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                             </td> -->
 
                                                             <td>
-                                                                 <div align="center">
+                                                                 <div style="text-align: center;">
                                                                       <input name="number8" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
@@ -163,7 +109,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        </tr>
                                                        <th scope="row" style="text-align: center;">4</th>
                                                        <td style="text-align: center;">
-                                                            <div align="justify">Communications Skills
+                                                            <div style="text-align: justify;">Communications Skills
                                                             </div>
                                                        </td>
                                                        <!-- <td>
@@ -175,7 +121,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        </td> -->
 
                                                        <td>
-                                                            <div align="center">
+                                                            <div style="text-align: center;">
                                                                  <input name="number9" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
                                                                       aria-label="0-10" min="0" max="10"
@@ -186,7 +132,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                        <tr>
                                                             <th scope="row" style="text-align: center;">5</th>
                                                             <td style="text-align: center;">
-                                                                 <div align="justify">Institutional Development
+                                                                 <div style="text-align: justify;">Institutional Development
                                                                       contributors
                                                                  </div>
                                                             </td>
@@ -199,7 +145,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                             </td> -->
 
                                                             <td>
-                                                                 <div align="center">
+                                                                 <div style="text-align: center;">
                                                                       <input name="number10" type="number"
                                                                            style="width: 135px;" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
@@ -208,6 +154,7 @@ https://templatemo.com/tm-535-softy-pinko
                                                             </td>
                                                        </tr>
 
+                                                  
 
                                                   </tbody>
                                              </table>
@@ -220,19 +167,16 @@ https://templatemo.com/tm-535-softy-pinko
                                              </div>
 
                                              <br>
-
                                         </div>
-
-
-
                                    </div>
                               </form>
                          </div>
                     </div>
+
                     <?php
-        include ('footer.php');
+        include ('templates/footer.php');
         ?>
-               </div>
+        
                <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
                <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
                <script type="text/javascript">
@@ -258,6 +202,8 @@ https://templatemo.com/tm-535-softy-pinko
                <!-- Global Init -->
                <script src="assets/js/custom.js"></script>
                <!--  -->
+          </div>
+     </div>
 
 
 

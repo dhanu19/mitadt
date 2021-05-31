@@ -14,6 +14,6 @@ $updateHODRatingsQuery = "UPDATE section_iv set Activity1HR = '$varA1HR',Activit
 $executeUpdateHODRatingsQuery = mysqli_query($con,$updateHODRatingsQuery);
 
 if($executeUpdateHODRatingsQuery){
-     header('Location:../form4self(1).php?userId='.$varUserId);
+     header('Location:../Form_B5_hod.php?userId='.$varUserId);
 }
 ?>
