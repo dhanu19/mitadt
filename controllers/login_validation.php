@@ -1,7 +1,7 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
 session_start();
-$servername = 'localhost:3307';
+$servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'mitadt';
