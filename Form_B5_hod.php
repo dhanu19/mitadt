@@ -1,13 +1,13 @@
 <?php 
 require_once('connection.php');
 include('templates/header.php');
-//        include('headerhod.php');
+
     ?>
      
 
      <div class="container bootstrap snippets bootdey">
           <div class="row">
-          <div class="col-12 col-md-12 col-lg-3">
+               <div class="col-12 col-md-12 col-lg-3">
                     <?php include('profile.php'); ?>
                </div>
                
@@ -24,6 +24,8 @@ include('templates/header.php');
                          <br>
                          <div class="container" style="padding-top:10px; text-align:left;"><h5>PERSONALITY ASSESSMENT</h5></div>
                          <br>
+
+
                          <div class="panel-body bio-graph-info">
                               <form action="controllers/formB5HODRatingController.php?userId=<?php echo $_GET['userId'];?>"
                                    method="POST">
@@ -38,8 +40,6 @@ include('templates/header.php');
                                                                  <div style="text-align: justify;">Parameters</div>
                                                             </th>
                                                             <th scope="col" style="text-align: center;">HOD Rating</th>
-
-
                                                        </tr>
                                                   </thead>
                                                   <tbody>
