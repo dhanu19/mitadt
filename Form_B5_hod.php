@@ -13,10 +13,9 @@ include('templates/header.php');
                
                <div class="profile-info col-md-12 col-lg-9">
                     <div class="panel">
-                         
-                         <h3 style="text-align:center">Performance Appraisal </h3>
-                                   
+                         <h3 style="text-align:center">Performance Appraisal </h3>            
                     </div>
+                    
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM B (Section 5)
