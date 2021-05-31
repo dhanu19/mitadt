@@ -444,7 +444,8 @@ table {
 }
 
 .dropdown-content a:hover {
-  background-color: white
+  background-color: white;
+  color: #b984dc; /*drop down hover color*/
 }
 
 .dropdown:hover .dropdown-content {

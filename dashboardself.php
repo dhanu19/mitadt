@@ -1,10 +1,15 @@
 
      <?php
-        //include('headerself.php');
-        //include('templates/header.php')
+
         require_once('connection.php');
         include('templates/header.php');
      ?>
+
+<style>
+  /*   .dropdown-content-hover:hover{
+          color: blueviolet;
+     }*/
+</style>
 <div >
 
      <div class="container bootstrap snippets bootdey  ">
@@ -23,7 +28,7 @@
                          </div>
                     </div>
                     <br>
-                    <div class="panel-body bio-graph-info">
+                    <div class="panel-body bio-graph-info" style="color: black;">
                          <div class="flex-container">
                               <div class="flex-item-left " style="font-size: medium; ">Form A
                                    <p>[General inflormation]</p>
@@ -32,14 +37,14 @@
                                    <div class="dropdown">
                                         <button class="dropbtn">FORMS</button>
                                         <div class="dropdown-content">
-                                             <a href="Form_A1_self.php?userId=<?php echo $_SESSION['userId'];?>"> 1 </a>
-                                             <a href="Form_A2_self.php?userId=<?php echo $_SESSION['userId'];?>"> 2 </a>
+                                             <a class="dropdown-content-hover" href="Form_A1_self.php?userId=<?php echo $_SESSION['userId'];?>"> 1 </a>
+                                             <a class="" href="Form_A2_self.php?userId=<?php echo $_SESSION['userId'];?>"> 2 </a>
                                         </div>
                                    </div>
                               </div>
                          </div>
 
-                         <div class="panel-body bio-graph-info">
+                         <div class="panel-body bio-graph-info" style="color: black;">
                               <div class="flex-container">
                                    <div class="flex-item-left " style="font-size: medium; ">Form B
                                         <p>[Academic Performance Indicators]</p>
@@ -59,7 +64,7 @@
                               </div>
                          </div>
 
-                         <div class="panel-body bio-graph-info">
+                         <div class="panel-body bio-graph-info" style="color: black;">
                               <div class="flex-container">
                                    <div class="flex-item-left " style="font-size: medium; ">Form C
                                         <p>[Overall Summary]</p>
