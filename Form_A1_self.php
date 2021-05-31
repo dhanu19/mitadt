@@ -75,59 +75,21 @@ include('templates/header.php');
                                    <br>
                                    <button type="submit" value="login" class="btn btn-primary text-center">Submit</button>
 
-                                   <?php /* 
-                                   <form action="controllers/form_data_validation.php" method="POST" >
-                              <div class="panel-body bio-graph-info">
-                                   <h1>PERSONAL INFORMATION</h1>
-                                   <div class="row">
-                                        <div class="bio-row">
-                                             <p><span>Employee Name </span> <input class="input" name="empName" value="<?php echo $rowUserInfo['NameOfFacultyMember'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Father's Name</span> <input class="input" name="fatherName" value="<?php echo $rowUserInfo['FatherName'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Date of birth</span><input type="date" name="dob" value="<?php echo $rowUserInfo['DOB'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Gender</span> <input class="input" name="gender"  value="<?php echo $rowUserInfo['Gender'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>No of Dependents</span> <input class="input" name="dependents" value="<?php echo $rowUserInfo['NoOfDependent'];?>" />
-                                             </p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Marital Status:</span> <input class="input"
-                                                       name="maritalStatus" value="<?php echo $rowUserInfo['MaritalStatus'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Nationality</span> <input class="input" name="nationality" value="<?php echo $rowUserInfo['Nationality'];?>" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                             <p><span>Religion</span> <input class="input" name="religion" value="<?php echo $rowUserInfo['Religion'];?>" /></p>
-                                        </div>
-                                        <!-- SAVE DATA BUTTON-->
-                                        <div class="row mb-3 px-3"> <button type="submit" value="login"
-                                                  class="btn btn-blue text-center">Save</button> </div>
-                                   </div>
-                              </div>
-                         </form>
-                                   */?>
                                    
 
-
                               </div>
                          </form>
+
                     </div>
                </div>
           </div>
      </div>
 
-     <div>
+
           <?php
                include ('templates/footer.php');
           ?>
-     </div>
+
 
 
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

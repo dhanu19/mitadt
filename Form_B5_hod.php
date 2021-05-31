@@ -21,14 +21,15 @@ include('templates/header.php');
                          <div class="bio-graph-heading">
                               FORM B (Section 5)
                          </div>
+                         <br>
+                         <div class="container" style="padding-top:10px; text-align:left;"><h5>PERSONALITY ASSESSMENT</h5></div>
+                         <br>
                          <div class="panel-body bio-graph-info">
                               <form action="controllers/formB5HODRatingController.php?userId=<?php echo $_GET['userId'];?>"
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
-                                             <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-                                             <h3 style="color:black;">Personality Assessment</h3>
-                                             <br>
+
                                              <table class="table ">
                                                   <thead>
                                                        <tr>

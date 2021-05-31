@@ -22,6 +22,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
         
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">        
         <link rel="stylesheet" href="assets/css/dashboard.css">
         <link rel="stylesheet" href="assets/css/style.css">      
@@ -186,9 +187,23 @@ header {
 
                                 <!-- dashboard -->
                                 <?php if((isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="dashboardself.php" style="color: white;">Dashboard</a>
-                                    </li>
+                                    <?php if(($_SESSION['designation'] == 'Principal' )) {?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboarddirector.php" style="color: white;">Dashboard</a>
+                                        </li>
+                                    <?php }elseif(($_SESSION['designation'] == 'HOD' )) {?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboardHOD.php" style="color: white;">Dashboard</a>
+                                        </li>
+                                    <?php }elseif(($_SESSION['designation'] == 'Admin' )){?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboardsuperadmin.php" style="color: white;">Dashboard</a>
+                                        </li>
+                                        <?php }else{?>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="dashboardself.php" style="color: white;">Dashboard</a>
+                                        </li>
+                                        <?php } ?>
                                 <?php } ?>
 
                                 <?php if(!(isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
@@ -200,7 +215,7 @@ header {
                                     <!-- forms -->
                                     <?php if((isset($_SESSION['login']) && $_SESSION['login'] == "1")){ //if session is set run this?>
 
-                                        <?php if(!($_SESSION['designation'] == 'Principal' || $_SESSION['designation'] == 'Admin' )) {?>
+                                        <?php if(!($_SESSION['designation'] == 'Admin' )) {?>
                                             <!-- if user is principal or superadmin then these will not be shown in header-->
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">

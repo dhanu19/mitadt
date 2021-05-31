@@ -4,8 +4,10 @@
           include ('templates/header.php');
      ?>
 
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+		
 
-     <div class="container login_form bootstrap snippets bootdey">
+     <div class="container login_form">
           <div class="row">
 
                     <div class="col col-md-6 col-lg-6 login_form_image">
@@ -16,9 +18,6 @@
                          <!-- -->
                          <div >
                               <form action="controllers/login_validation.php" class="sign-in-form" method="POST">
-                                   <div class="form-outline mb-4">
-                                        <h3>Login</h3>
-                                   </div>
                                    <!-- Aadhar number input -->
                                    <div class="form-outline mb-4">
                                         <label class="form-label" for="aadharno">Adhar Card Number: </label>
@@ -28,8 +27,8 @@
                                    <!-- Password input -->
                                    <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <button id="toggle-password"  style=" color: black; font-size: small; text-align: right; align-self: auto;" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show
-                                                  Password</button>
+                                        <!--<button id="toggle-password" type="button"><span class="glyphicon glyphicon-eye-open"></span></button>-->
+                                        <i class="bi bi-eye-slash" id="togglePassword"></i>
                                         <input type="password" name="password" id="password" class="form-control" style="text-align:left;" required/>
                                    </div>
 
@@ -46,7 +45,7 @@
 
                                    <!-- Register buttons -->
                                    <div class="text-center">
-                                        <p>Not a member? <a href="signup.php">Register</a></p>
+                                        <p>Not a member? <a href="#!">Register</a></p>
                                    </div>
                               </form>
 
@@ -74,8 +73,9 @@
      </div>
      <script src="assets/js/custom.js"></script>
      <script>
-     const passwordInput = document.getElementById('password');
+     /*const passwordInput = document.getElementById('password');
      const togglePasswordButton = document.getElementById('toggle-password');
+
 
      togglePasswordButton.addEventListener('click', togglePassword);
 
@@ -92,7 +92,17 @@
                     'Show password as plain text. ' +
                     'Warning: this will display your password on the screen.');
           }
-     }
+     }*/
+     const togglePassword = document.querySelector('#togglePassword');
+     const password = document.querySelector('#password');
+
+     togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
      </script>
      
      

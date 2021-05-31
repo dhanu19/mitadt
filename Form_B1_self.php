@@ -96,10 +96,9 @@ include('templates/header.php');
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
-                                             <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
+                                             
                                             
-                                             <br>
-                                             <br>
+                                             
                                              <table class="table ">
                                                   <thead>
                                                        <tr>

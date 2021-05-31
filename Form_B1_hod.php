@@ -1,10 +1,11 @@
 <?php 
 require_once('connection.php');
 include('templates/header.php');
-//include('headerhod.php');
+
 ?>
-     <div style="padding-top: 4.5rem;">
+     <div >
           <div class="container bootstrap snippets bootdey">
+          <div class="row">
                <div class="col-12 col-md-12 col-lg-3">
                          <?php include('profile.php'); ?>
                     </div>
@@ -22,6 +23,9 @@ include('templates/header.php');
                               <div class="bio-graph-heading">
                                    FORM B(Section 2)
                               </div>
+                              <br>
+                              <div class="container" style="padding-top:10px; text-align:left;"><h5>TEACHING, LEARNING AND EVALUATION RELATED ACTIVITIES</h5></div>
+                              <br>
                               <?php
                                    $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
                                    $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
@@ -29,9 +33,7 @@ include('templates/header.php');
                                    if($rowStatus['SectionI'] == 0){                                                    
                               ?>
                               <div class="panel-body bio-graph-info">
-                                   <center>
                                         <h3>Employee has not filled this form</h3>
-                                   </center>
                                    <a href="researchhod1.php"><button>Next</button></a>
                               </div>
                               <?php }
@@ -41,13 +43,8 @@ include('templates/header.php');
                                         method="POST">
                                         <div class="row">
                                              <div class="panel-body bio-graph-info" style="background-color:white">
-                                                  <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-                                                  <h3 style="color:black;"> TEACHING, LEARNING AND EVALUATION RELATED
-                                                       ACTIVITIES
-                                                  </h3>
-                                                  <br>
-                                                  <br>
-                                                  <table class="table table-striped">
+                                                  
+                                                  <table class="table ">
                                                        <thead>
                                                             <tr>
                                                                  <th scope="col" style="text-align: center;">Section number
@@ -73,7 +70,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">1</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">Percentage of lectures,
+                                                                           <div style = "text-align: justify">Percentage of lectures,
                                                                            contact
                                                                            hours undertaken during both the semesters
                                                                            (100%
@@ -86,14 +83,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">20</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-20"
                                                                                 value="<?php echo $rowRatings['Activity1']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-20"
                                                                                 aria-label="0-20" min="0" max="20"
                                                                                 style="width: 135px;" name="Activity1HR">
@@ -104,7 +101,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">2</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">Percentage of Seminars,
+                                                                           <div style = "text-align: center">Percentage of Seminars,
                                                                            Tutorials,
                                                                            Practicals, etc. or other teaching duties
                                                                            other
@@ -121,14 +118,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">20</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-20"
                                                                                 value="<?php echo $rowRatings['Activity2']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-20"
                                                                                 aria-label="0-20" min="0" max="20"
                                                                                 style="width: 135px;" name="Activity2HR">
@@ -139,7 +136,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">3</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">Use of participatory and
+                                                                           <div style = "text-align: justify">Use of participatory and
                                                                                 innovative teaching/ learning methodologies;
                                                                                 updating of subject content, course
                                                                                 improvement
@@ -164,14 +161,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">20</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-20"
                                                                                 value="<?php echo $rowRatings['Activity3']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-20"
                                                                                 aria-label="0-20" min="0" max="20"
                                                                                 style="width: 135px;" name="Activity3HR">
@@ -182,7 +179,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">4</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">Examination duties
+                                                                           <div style = "text-align: justify">Examination duties
                                                                                 (Invigilation,
                                                                                 question paper setting, evaluation/
                                                                                 assessment of
@@ -191,14 +188,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">20</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-20"
                                                                                 value="<?php echo $rowRatings['Activity4']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-20"
                                                                                 aria-label="0-20" min="0" max="20"
                                                                                 style="width: 135px;" name="Activity4HR">
@@ -210,7 +207,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">5</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">University final results for
+                                                                           <div style = "text-align: justify">University final results for
                                                                                 the
                                                                                 subjects allocated for both the semesters
                                                                                 (Above
@@ -222,14 +219,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">10</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-10"
                                                                                 value="<?php echo $rowRatings['Activity5']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-10"
                                                                                 aria-label="0-10" min="0" max="10"
                                                                                 style="width: 135px;" name="Activity5HR">
@@ -240,7 +237,7 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;">6</th>
                                                                  <td style="text-align: left;">
                                                                       <div allign="justify">
-                                                                           <div align="justify">Student Feedback for both the
+                                                                           <div style = "text-align: justify">Student Feedback for both the
                                                                                 semesters - ERP-Feedback ( 100% compliance =
                                                                                 10
                                                                                 points) </div>
@@ -248,14 +245,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">10</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" placeholder="0-10"
                                                                                 value="<?php echo $rowRatings['Activity6']; ?>"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-10"
                                                                                 aria-label="0-10" min="0" max="10"
                                                                                 style="width: 135px;" name="Activity6HR">
@@ -268,14 +265,14 @@ include('templates/header.php');
                                                                  <td style="text-align: center;"><b>Total</b></td>
                                                                  <td style="text-align: center;">100</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="text" style="width: 135px;"
                                                                                 placeholder="0-100"
                                                                                 value="<?php echo $rowRatings['TotalSelfRating']; ?>">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-100"
                                                                                 aria-label="0-100" min="0" max="50"
                                                                                 style="width: 135px;">
@@ -290,14 +287,14 @@ include('templates/header.php');
                                                                  </td>
                                                                  <td style="text-align: center;">60</td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-60"
                                                                                 aria-label="0-60" min="0" max="60"
                                                                                 style="width: 135px;">
                                                                       </div>
                                                                  </td>
                                                                  <td>
-                                                                      <div align="center">
+                                                                      <div style = "text-align: center">
                                                                            <input type="number" placeholder="0-60"
                                                                                 aria-label="0-60" min="0" max="60"
                                                                                 style="width: 135px;">
@@ -321,9 +318,10 @@ include('templates/header.php');
                     </div>
                </div>
           </div>
+          </div>
  
      <?php
-        include ('footer.php');
+        include ('templates/footer.php');
         ?>
 
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

@@ -20,6 +20,9 @@ include('templates/header.php');
                          <div class="bio-graph-heading">
                               FORM B (Section 4)
                          </div>
+                         <br>
+                         <div class="container" style="padding-top:10px; text-align:left;"><h5>CONTRIBUTION TO TRUST/SOCIETY/UNIVERSITY</h5></div>
+                         <br>
                          <?php
                               $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
                               $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
@@ -39,9 +42,7 @@ include('templates/header.php');
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
-                                             <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-                                             <h3 style="color:black;"> Contribution to TRUST/SOCIETY/UNIVERSITY</h3>
-
+                                             
                                              <table class="table ">
 
                                                   <thead>

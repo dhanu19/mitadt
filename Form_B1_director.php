@@ -1,9 +1,9 @@
 <?php 
 require_once('connection.php');
 include('templates/header.php');
-//include('headerdirector.php');
+
 ?>
-     <div style="padding-top: 4.5rem;">
+     <div >
      
 
      <div class="container bootstrap snippets bootdey">
@@ -22,6 +22,9 @@ include('templates/header.php');
                          <div class="bio-graph-heading">
                               FORM B (Section 1)
                          </div>
+                         <br>
+                         <div class="container" style="padding-top:10px; text-align:left;"><h5>TEACHING, LEARNING AND EVALUATION RELATED ACTIVITIES</h5></div>
+                         <br>
                          <?php
                               $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
                               $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
@@ -42,13 +45,8 @@ include('templates/header.php');
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
-                                             <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-                                             <h3 style="color:black;"> TEACHING, LEARNING AND EVALUATION RELATED
-                                                  ACTIVITIES
-                                             </h3>
-                                             <br>
-                                             <br>
-                                             <table class="table table-striped">
+                                             
+                                             <table class="table ">
                                                   <thead>
                                                        <tr>
                                                             <th scope="col" style="text-align: left; width: 50px;">

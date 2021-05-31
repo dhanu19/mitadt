@@ -5,7 +5,7 @@ include('templates/header.php');
     ?>
 
 
-</div style="padding-top: 4.5rem;">
+
      <div class="container bootstrap snippets bootdey">
           <div class="row">
           <div class="col-12 col-md-12 col-lg-3">
@@ -22,6 +22,9 @@ include('templates/header.php');
                          <div class="bio-graph-heading">
                               FORM B (Section 3)
                          </div>
+                         <br>
+                         <div class="container" style="padding-top:10px; text-align:left;"><h5>CO-CURRICULAR, EXTENSION AND PROFESSIONAL DEVELOPMENT RELATED ACTIVITIES</h5></div>
+                         <br>
                          <?php
                               $selectStatusQuery = "Select * from status where Userid = ".$_GET['userId'];
                               $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
@@ -42,12 +45,8 @@ include('templates/header.php');
                                    method="POST">
                                    <div class="row">
                                         <div class="panel-body bio-graph-info" style="background-color:white">
-                                             <!--<h2 style="color:blanchedalmond;">FORM B</h2>-->
-                                             <h3 style="color:black;"> CO-CURRICULAR, EXTENSION AND PROFESSIONAL
-                                                  DEVELOPMENT
-                                                  RELATED ACTIVITIES</h3>
-
-                                             <table class="table table-striped">
+                                             
+                                             <table class="table ">
                                                   <thead>
                                                        <tr>
                                                             <th scope="col" style="text-align: left; width: 50px;">
@@ -263,16 +262,12 @@ include('templates/header.php');
                     </div>
                </div>
           </div>
-
-
-
-
      </div>
 
 
 
      <?php
-        include ('footer.php');
+        include ('templates/footer.php');
         ?>
 
 
