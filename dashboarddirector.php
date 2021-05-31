@@ -1,13 +1,10 @@
-
-
-     <?php
-        //include('headerdirector.php');
-        require_once('connection.php');
-        include('templates/header.php');
-    ?>
+<?php
+     require_once('connection.php');
+     include('templates/header.php');
+?>
 
     
-     <div class="container bootstrap snippets bootdey" style="padding: top 30px; ;">
+     <div class="container bootstrap snippets bootdey" >
           <div class="row">
                <div class="col-12 col-md-12 col-lg-3">
                     <?php
@@ -82,50 +79,7 @@
                                                        </thead>
                                                        <tbody id="tableBody">
 
-                                                            <!-- <tr>
-                                                                 <th scope="row" style="text-align: center;">1</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                 <th scope="row" style="text-align: center;">2</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                 <th scope="row" style="text-align: center;">3</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                 <th scope="row" style="text-align: center;">4</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                 <th scope="row" style="text-align: center;">5</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                 <th scope="row" style="text-align: center;">6</th>
-                                                                 <td style="text-align: left;">
-                                                                      <div allign="justify"></div>
-                                                                 </td>
-                                                                 <td style="text-align: center;"></td>
-                                                            </tr> -->
-
+                                                            
 
                                                        </tbody>
                                                   </table>

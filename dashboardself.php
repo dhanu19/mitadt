@@ -1,15 +1,9 @@
-
      <?php
 
         require_once('connection.php');
         include('templates/header.php');
      ?>
 
-<style>
-  /*   .dropdown-content-hover:hover{
-          color: blueviolet;
-     }*/
-</style>
 <div >
 
      <div class="container bootstrap snippets bootdey  ">
