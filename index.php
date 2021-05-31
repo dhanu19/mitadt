@@ -13,9 +13,9 @@
           <!-- ***** Header Text Start ***** -->
           <div class="header-text">
                <div class="container">
-                    
                     <div class="row">
                          <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                              <img src="assets/images/mitlogo.png"  width="170px" height="170px">
                               <h1><strong>MIT Art, Design, and Technology University</strong></h1>
                               <p>EXPERIENCE THE NEXT LEVEL EDUCATION </p>
                               <!-- ***** <a href="#features" class="main-button-slider">Discover More</a> ***** -->
