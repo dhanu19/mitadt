@@ -1,7 +1,7 @@
 <?php 
 require_once('connection.php');
 include('templates/header.php');
-//        include('headerself.php');
+
     ?>
 
 <script>

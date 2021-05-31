@@ -18,6 +18,11 @@
                          <!-- -->
                          <div >
                               <form action="controllers/login_validation.php" class="sign-in-form" method="POST">
+                                   <div class="form-outline mb-4">
+                                   <div class="panel">
+                                        <h3 style="text-align:center">Login </h3>                         
+                                   </div>
+                                   </div>
                                    <!-- Aadhar number input -->
                                    <div class="form-outline mb-4">
                                         <label class="form-label" for="aadharno">Adhar Card Number: </label>
@@ -26,7 +31,7 @@
 
                                    <!-- Password input -->
                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="password">Password</label>
+                                        <label class="form-label" for="password">Password</label> &nbsp;
                                         <!--<button id="toggle-password" type="button"><span class="glyphicon glyphicon-eye-open"></span></button>-->
                                         <i class="bi bi-eye-slash" id="togglePassword"></i>
                                         <input type="password" name="password" id="password" class="form-control" style="text-align:left;" required/>
@@ -36,7 +41,7 @@
                                    <div class="row mb-4">
                                         <div class="col">
                                              <!-- Simple link -->
-                                             <a href="#!">Forgot password?</a>
+                                             <a href="#">Forgot password?</a>
                                         </div>
                                    </div>
 
@@ -45,7 +50,7 @@
 
                                    <!-- Register buttons -->
                                    <div class="text-center">
-                                        <p>Not a member? <a href="#!">Register</a></p>
+                                        <div>Not a member? <a href="signup.php">Register</a></div>
                                    </div>
                               </form>
 

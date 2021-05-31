@@ -1,75 +1,151 @@
 <?php 
 require_once('connection.php');
-
+include('templates/header.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <meta name="description" content="">
-     <meta name="author" content="">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-
-     <title>REGISTER</title>
-     <!--
-SOFTY PINKO
-https://templatemo.com/tm-535-softy-pinko
--->
-
-     <!-- Additional CSS Files -->
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
-
-     <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css"> -->
-
-     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
 
 
-
-     <link rel="stylesheet" href="assets/css/style2.css">
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-
-     <div id="preloader">
-          <div class="jumper">
-               <div></div>
-               <div></div>
-               <div></div>
-          </div>
-     </div>
-     <div>
-          <?php
-        include('templates/header.php');
-    ?>
-     </div>
      <div class="container bootstrap snippets bootdey">
           <div class="row">
-               <div>
-                    <?php
-                    include('profile.php');
-                    ?>
+               <div class="col-12 col-md-12 col-lg-3">
+                    <?php include('profile.php');  ?>
                </div>
-               <div class="profile-info col-md-9">
+               <div class="profile-info col-md-12 col-lg-9">
                     <div class="panel">
-                         
-                         <h3 style="text-align:center">Performance Appraisal </h3>
-                                   
+                         <h3 style="text-align:center">Performance Appraisal </h3>     
                     </div>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM A
                          </div>
-
+                         <br>
+                         <div class="container" style="padding-top:10px; text-align:left;"><h5>PERSONAL INFORMATION</h5></div>
+                         <br>
                          <div class="panel-body bio-graph-info">
-                              <h1>PERSONAL INFORMATION</h1>
+                              <div class="container">
+                                   <form action="controllers/form_data_validation.php" method="POST"  enctype="multipart/form-data">
+                                        <div class="form-row">
+                                             <div class="form-group ">
+                                                  <label for="firstName">First Name</label>
+                                                  <input type="text" class="form-control" id="firstName" name="firstName">
+                                             </div>
+                                             <br>
+                                             <div class="form-group ">
+                                                  <label for="lastName">Last Name</label>
+                                                  <input type="text" class="form-control" id="lastName" name="lastName">
+                                             </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="fatherName">Father's Name</label>
+                                             <input type="text" class="form-control" id="fatherName" name="fatherName">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="dob">Date of Birth</label>
+                                             <input type="date" class="form-control" id="dob" name="dob">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="gender">Gender</label>
+                                             <select class="form-control" id="gender" name="gender">
+                                                  <option selected>Select</option>
+                                                  <option value="Male">Male</option>
+                                                  <option value="Female">Female</option>
+                                                  <option value="Other">Other</option>
+                                             </select>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="maritalStatus">Marital Status</label>
+                                             <select class="form-control" id="maritalStatus" name="maritalStatus">
+                                                  <option selected>Select</option>
+                                                  <option value="Married">Married</option>
+                                                  <option value="Unmarried">Unmarried</option>
+                                             </select>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="dependents">No. of Childeren(s)</label>
+                                             <input type="text" class="form-control" id="dependents" name="dependents">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="nationality">Nationality</label>
+                                             <input type="text" class="form-control" id="nationality" name="nationality">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="religion">Religion</label>
+                                             <input type="text" class="form-control" id="religion" name="religion">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="caste">Caste</label>
+                                             <input type="text" class="form-control" id="caste" name="caste">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="subCategory">Sub Category</label>
+                                             <input type="text" class="form-control" id="subCategory" name="subCategory">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="permanentAddress">Permanent Address</label>
+                                             <input type="text" class="form-control" id="permanentAddress" name="permanentAddress">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="correspondentAddress">Address of correspondance</label>
+                                             <input type="text" class="form-control" id="correspondentAddress" name="correspondentAddress">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="email">Email</label>
+                                             <input type="email" class="form-control" id="email" name="email">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="eid">Employee ID</label>
+                                             <input type="text" class="form-control" id="eid" name="eid">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="designation">Designation</label>
+                                             <select name="designation" class='form-control' id="des">
+                                                  <option selected>Select</option>
+                                                  <option value="Fresher">Fresher</option>
+                                                  <option value="Professor">Professor</option>
+                                                  <option value="Associate Professor">Associate Professor</option>
+                                                  <option value="Assistant Professor">Assistant Professor</option>
+                                                  <option value="Teaching Assistant">Teaching Assistant</option>
+                                                  <option value="Technical Assistant">Technical Assistantt</option>
+                                                  <option value="Lab Assistant">Lab Assistant</option>
+                                             </select>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="mobile">Phone Number</label>
+                                             <input type="text" class="form-control" id="mobile" name="mobile">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="pwd">Password</label> &nbsp; <i id="ipass" class="fa fa-eye" style="padding-top: 15px;" onclick="hideshowpass()"></i>
+                                             <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo @$_COOKIE['cpass'];?>">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="myFile">Upload Photo</label>
+                                             <input type="file" class="form-control" id="myFile" name="profilePhoto">
+                                        </div>
+                                        
+                                        <br>
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                   </form>
+                                   <br>
+                              </div>
+
+<?php /*
                               <!--form start -->
                               <form action="controllers/form_data_validation.php" method="POST"  enctype="multipart/form-data">
                                    <div class="row">
@@ -135,12 +211,7 @@ https://templatemo.com/tm-535-softy-pinko
                                              <p><span>Current designation and grade pay</span> <input class="input"
                                                        name="designation" /></p>
                                         </div>
-
-
                                    </div>
-
-
-
                                    <!---------->
                                    <div class="panel-body bio-graph-info">
                                         Are you existing employee:
@@ -232,7 +303,7 @@ https://templatemo.com/tm-535-softy-pinko
 
                               </form>
                               <!-- form end-->
-
+*/?>
 
                          </div>
                         <!--  <div class="align-right">
@@ -248,11 +319,11 @@ https://templatemo.com/tm-535-softy-pinko
           </div>
      </div>
 
-     <div>
+
           <?php
         include ('templates/footer.php');
         ?>
-     </div>
+     
 
      <script src="jquery-1.11.3.js"></script>
      <script>
@@ -310,10 +381,6 @@ https://templatemo.com/tm-535-softy-pinko
      });
      </script>
 
-     </br>
-     </br>
-
-
      <!-- jQuery -->
      <script src="assets/js/jquery-2.1.0.min.js"></script>
 
@@ -331,6 +398,3 @@ https://templatemo.com/tm-535-softy-pinko
      <script src="assets/js/custom.js"></script>
      <!--  -->
 
-</body>
-
-</html>

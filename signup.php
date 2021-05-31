@@ -6,8 +6,8 @@ include('templates/header.php');
      <div class="container bootstrap snippets bootdey">
           
           <div class="row">
-               <div class="col col-lg-8 col-md-6 col-sm-4">
-                    <div class="container" style="padding: 10px;">
+               <div class="col col-lg-6 col-md-9 col-sm-12 offset-lg-3">
+                    <div class="container " style="padding: 10px;">
                          <div class="panel">
                               <h3 style="text-align:center">Sign Up </h3>                         
                          </div>
