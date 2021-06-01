@@ -24,18 +24,18 @@ include('templates/header.php');
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-3">
-                                    <form action="">
+                                    <form action="controllers/generate_pdf.php" method="get">
                                         <div class="form-group">
-                                            <label for="designation" style="font-size: 16px;">Select Designation</label>
-                                            <select name="designation" class='form-control' id="des" style="text-align:left;">
-                                                <option selected>Select</option>
-                                                <option value="Fresher">Fresher</option>
-                                                <option value="Professor">Professor</option>
-                                                <option value="Associate Professor">Associate Professor</option>
-                                                <option value="Assistant Professor">Assistant Professor</option>
-                                                <option value="Teaching Assistant">Teaching Assistant</option>
-                                                <option value="Technical Assistant">Technical Assistantt</option>
-                                                <option value="Lab Assistant">Lab Assistant</option>
+                                            <label for="department" style="font-size: 16px;">Select Department</label>
+                                            <select name="department" class='form-control' id="department" style="text-align:left;">
+                                            <option selected>Select</option>
+                                                <option value="CSE">CSE</option>
+                                                <option value="IT">IT</option>
+                                                <option value="ECE">ECE</option>
+                                                <option value="AEROSPACE">AEROSPACE</option>
+                                                <option value="CIVIL">CIVIL</option>
+                                                <option value="Applied Science & Huminities Department">Applied Science & Huminities Department</option>
+                                                <option value="Mechanical">Mechanical</option>
                                             </select>
                                         </div>
                                         <br>
