@@ -14,19 +14,35 @@ include('templates/header.php');
                 <div class="panel">
                     <h3 style="text-align:center">Performance Appraisal </h3>
                 </div>
-
+                <br>
                 <div class="panel">
                     <div class="bio-graph-heading">
                         DOWNLOADS
                     </div>
                     <br>
-                    <div class="panel-body bio-graph-info">
+                    <div class="panel-body bio-graph-info" style="color:black;font-size:15px;">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-3" style="color:black;font-size:15px;">Generate PDF</div>
-                                <div class="col-3">
-                                    <button class="btn btn-primary" href="">Download</button>
+                                <div class="col">
+                                    <form action="controllers/generate_pdf.php" method="get">
+                                        <div class="form-group">
+                                            <label for="department" style="font-size: 16px;">Select Department</label>
+                                            <select name="department" class='form-control' id="department" style="text-align:left;">
+                                                <option selected>Select</option>
+                                                <option value="CSE">CSE</option>
+                                                <option value="IT">IT</option>
+                                                <option value="ECE">ECE</option>
+                                                <option value="AEROSPACE">AEROSPACE</option>
+                                                <option value="CIVIL">CIVIL</option>
+                                                <option value="Applied Science & Huminities Department">Applied Science & Huminities Department</option>
+                                                <option value="Mechanical">Mechanical</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Generate Report</button>
+                                    </form>
                                 </div>
+                                
                             </div>
                             
                         </div>

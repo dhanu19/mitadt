@@ -3,9 +3,7 @@ require_once('connection.php');
 include('templates/header.php');
 
 ?>
-     <div >
-     
-
+<div>
      <div class="container bootstrap snippets bootdey">
           <div class="row">
                <div class="col-12 col-md-12 col-lg-3">
@@ -14,10 +12,9 @@ include('templates/header.php');
                
                <div class="profile-info col-md-12 col-lg-9">
                     <div class="panel">
-                         
-                         <h3 style="text-align:center">Performance Appraisal </h3>
-                                   
+                         <h3 style="text-align:center">Performance Appraisal </h3>           
                     </div>
+                    <br>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM B (Section 1)
@@ -33,7 +30,9 @@ include('templates/header.php');
                          ?>
                          <div class="panel-body bio-graph-info">
                               <div style = "text-align: center;">
-                                   <h3>Employee has not filled this form</h3>
+                                   <br>
+                                   <div class="container" style="padding-top:10px; text-align:left;"><h5>Employee has not filled this form</h5></div>
+                                   <br>
                               </div>
                               <a
                                    href="Form_B2_director.php?userId=<?php echo $_GET['userId'];?>"><button>Next</button></a>

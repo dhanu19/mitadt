@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $lastName = $_POST["lastName"];
     $name = $firstName.' '.$lastName;
     $fatherName = $_POST["fatherName"];
-    //$age = $_POST["age"];
+    $age = $_POST["age"];
     $dob= $_POST["dob"];
     $gender = $_POST["gender"];
     $dependents = $_POST["dependents"];
@@ -86,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         return;
     }
 
-	$query = " insert into personaldetails(Userid,NameOfFacultyMember,FatherName,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion,profilePhoto) values('$varUserId','$name','$fatherName', '$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion','$str') ";
+	$query = " insert into personaldetails(Userid,NameOfFacultyMember,FatherName,DOB,Gender,Email,MaritalStatus,NoOfDependent,Nationality,Religion,profilePhoto,Age) values('$varUserId','$name','$fatherName', '$dob','$gender','$email','$maritalStatus','$dependents','$nationality','$religion','$str',$age) ";
 
 	
     $updateLoginStatusQuery = "UPDATE login set LoginStatus = 1 where id = '$varUserId'";

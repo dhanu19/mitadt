@@ -54,6 +54,7 @@ include('templates/header.php');
                          <h3 style="text-align:center">Performance Appraisal </h3>
                                    
                     </div>
+                    <br>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM B (Section 4)
@@ -71,7 +72,9 @@ include('templates/header.php');
                               if($rowStatus['SectionIV'] == 1){                                                    
                          ?>
                          <div class="panel-body bio-graph-info">
-                              <h3>You already have filled this form</h3>
+                         <br>
+                              <div class="container" style="padding-top:10px; text-align:left;"><h5>You already have filled this form</h5></div>
+                              <br>
                               <!-- <button>Edit My Previous Response</button> -->
                          </div>
                          <?php }
@@ -89,7 +92,7 @@ include('templates/header.php');
                                                        <thead>
                                                             <tr>
                                                                  <th scope="col"
-                                                                      style="text-align: left; width: 100px;">Section
+                                                                      style="text-align: left; width: 50px;">Section
                                                                       number </th>
                                                                  <th scope="col" style="text-align: center;">Nature of
                                                                       activity</th>
@@ -110,9 +113,12 @@ include('templates/header.php');
                                                                            max. 05 points all together)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
-                                                                           aria-label="0-5" min="0" max="5"
-                                                                           style="width: 135px;" name="Activity1ER" id="Activity1ER">
+                                                                 <td>
+                                                                      <div style = "text-align: center;">
+                                                                           <input type="number" placeholder="0-5"
+                                                                                aria-label="0-5" min="0" max="5"
+                                                                                style="width: 135px;" name="Activity1ER" id="Activity1ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -124,9 +130,11 @@ include('templates/header.php');
                                                                            (5 points/ activity, max. 05 points)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity2ER" id="Activity2ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -142,9 +150,11 @@ include('templates/header.php');
                                                                            together)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity3ER" id="Activity3ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -157,10 +167,12 @@ include('templates/header.php');
                                                                            to the students) (2 points/ activity/
                                                                            semester, max. 05 points all together)</div>
                                                                  </td>
-                                                                 <td style="text-align: center;">05</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td style="text-align: center;">5</td>
+                                                                 <td><div style = "text-align: center;">
+                                                                 <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity4ER" id="Activity4ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -185,9 +197,12 @@ include('templates/header.php');
                                                                  <td style="text-align: center;"><b>Minimum API score
                                                                            required</b></td>
                                                                  <td style="text-align: center;">10</td>
-                                                                 <td><input type="number" placeholder="0-10"
+                                                                 <td><div style = "text-align: center;">
+                                                                 <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           style="width: 135px;"></td>
+                                                                           style="width: 135px;">
+                                                                      </div>        
+                                                                 </td>
                                                             </tr>
 
 
@@ -239,9 +254,11 @@ include('templates/header.php');
                                                                            max. 05 points all together)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity1ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -253,9 +270,11 @@ include('templates/header.php');
                                                                            (5 points/ activity, max. 05 points)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity2ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -271,9 +290,11 @@ include('templates/header.php');
                                                                            together)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">5</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity3ER">
+                                                                           </div>
                                                                  </td>
                                                             </tr>
 
@@ -287,9 +308,11 @@ include('templates/header.php');
                                                                            semester, max. 05 points all together)</div>
                                                                  </td>
                                                                  <td style="text-align: center;">05</td>
-                                                                 <td><input type="number" placeholder="0-5"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-5"
                                                                            aria-label="0-5" min="0" max="5"
                                                                            style="width: 135px;" name="Activity4ER">
+                                                                      </div>
                                                                  </td>
                                                             </tr>
 
@@ -299,9 +322,12 @@ include('templates/header.php');
                                                                  <th scope="row" style="text-align: center;"></th>
                                                                  <td style="text-align: center;"><b>Total</b></td>
                                                                  <td style="text-align: center;">20</td>
-                                                                 <td><input type="number" placeholder="0-20"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-20"
                                                                            aria-label="0-20" min="0" max="20"
-                                                                           style="width: 135px;"></td>
+                                                                           style="width: 135px;">
+                                                                      </div>
+                                                                 </td>
                                                             </tr>
 
 
@@ -311,9 +337,12 @@ include('templates/header.php');
                                                                  <td style="text-align: center;"><b>Minimum API score
                                                                            required</b></td>
                                                                  <td style="text-align: center;">10</td>
-                                                                 <td><input type="number" placeholder="0-10"
+                                                                 <td><div style = "text-align: center;">
+                                                                      <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
-                                                                           style="width: 135px;"></td>
+                                                                           style="width: 135px;">
+                                                                      </div>
+                                                                 </td>
                                                             </tr>
 
 

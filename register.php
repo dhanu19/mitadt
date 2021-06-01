@@ -13,6 +13,7 @@ include('templates/header.php');
                     <div class="panel">
                          <h3 style="text-align:center">Performance Appraisal </h3>     
                     </div>
+                    <br>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM A
@@ -20,34 +21,39 @@ include('templates/header.php');
                          <br>
                          <div class="container" style="padding-top:10px; text-align:left;"><h5>PERSONAL INFORMATION</h5></div>
                          <br>
-                         <div class="panel-body bio-graph-info">
+                         <div class="panel-body bio-graph-info" style="color:black; font-size:16px;">
                               <div class="container">
                                    <form action="controllers/form_data_validation.php" method="POST"  enctype="multipart/form-data">
                                         <div class="form-row">
                                              <div class="form-group ">
                                                   <label for="firstName">First Name</label>
-                                                  <input type="text" class="form-control" id="firstName" name="firstName">
+                                                  <input type="text" class="form-control" id="firstName" name="firstName" style="text-align:left;">
                                              </div>
                                              <br>
                                              <div class="form-group ">
                                                   <label for="lastName">Last Name</label>
-                                                  <input type="text" class="form-control" id="lastName" name="lastName">
+                                                  <input type="text" class="form-control" id="lastName" name="lastName" style="text-align:left;">
                                              </div>
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="fatherName">Father's Name</label>
-                                             <input type="text" class="form-control" id="fatherName" name="fatherName">
+                                             <input type="text" class="form-control" id="fatherName" name="fatherName" style="text-align:left;">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="age">Age</label>
+                                             <input type="text" class="form-control" id="age" name="age" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="dob">Date of Birth</label>
-                                             <input type="date" class="form-control" id="dob" name="dob">
+                                             <input type="date" class="form-control" id="dob" name="dob" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="gender">Gender</label>
-                                             <select class="form-control" id="gender" name="gender">
+                                             <select class="form-control" id="gender" name="gender" style="text-align:left;">
                                                   <option selected>Select</option>
                                                   <option value="Male">Male</option>
                                                   <option value="Female">Female</option>
@@ -57,7 +63,7 @@ include('templates/header.php');
                                         <br>
                                         <div class="form-group">
                                              <label for="maritalStatus">Marital Status</label>
-                                             <select class="form-control" id="maritalStatus" name="maritalStatus">
+                                             <select class="form-control" id="maritalStatus" name="maritalStatus" style="text-align:left;">
                                                   <option selected>Select</option>
                                                   <option value="Married">Married</option>
                                                   <option value="Unmarried">Unmarried</option>
@@ -66,52 +72,57 @@ include('templates/header.php');
                                         <br>
                                         <div class="form-group">
                                              <label for="dependents">No. of Childeren(s)</label>
-                                             <input type="text" class="form-control" id="dependents" name="dependents">
+                                             <input type="text" class="form-control" id="dependents" name="dependents" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="nationality">Nationality</label>
-                                             <input type="text" class="form-control" id="nationality" name="nationality">
+                                             <input type="text" class="form-control" id="nationality" name="nationality" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="religion">Religion</label>
-                                             <input type="text" class="form-control" id="religion" name="religion">
+                                             <input type="text" class="form-control" id="religion" name="religion" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="caste">Caste</label>
-                                             <input type="text" class="form-control" id="caste" name="caste">
+                                             <input type="text" class="form-control" id="caste" name="caste" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="subCategory">Sub Category</label>
-                                             <input type="text" class="form-control" id="subCategory" name="subCategory">
+                                             <input type="text" class="form-control" id="subCategory" name="subCategory" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="permanentAddress">Permanent Address</label>
-                                             <input type="text" class="form-control" id="permanentAddress" name="permanentAddress">
+                                             <input type="text" class="form-control" id="permanentAddress" name="permanentAddress" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="correspondentAddress">Address of correspondance</label>
-                                             <input type="text" class="form-control" id="correspondentAddress" name="correspondentAddress">
+                                             <input type="text" class="form-control" id="correspondentAddress" name="correspondentAddress" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="email">Email</label>
-                                             <input type="email" class="form-control" id="email" name="email">
+                                             <input type="email" class="form-control" id="email" name="email" style="text-align:left;">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                             <label for="doj">Date of Joining</label>
+                                             <input type="date" class="form-control" id="doj" name="doj" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="eid">Employee ID</label>
-                                             <input type="text" class="form-control" id="eid" name="eid">
+                                             <input type="text" class="form-control" id="eid" name="eid" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="designation">Designation</label>
-                                             <select name="designation" class='form-control' id="des">
+                                             <select name="designation" class='form-control' id="des" style="text-align:left;">
                                                   <option selected>Select</option>
                                                   <option value="Fresher">Fresher</option>
                                                   <option value="Professor">Professor</option>
@@ -125,12 +136,12 @@ include('templates/header.php');
                                         <br>
                                         <div class="form-group">
                                              <label for="mobile">Phone Number</label>
-                                             <input type="text" class="form-control" id="mobile" name="mobile">
+                                             <input type="text" class="form-control" id="mobile" name="mobile" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">
                                              <label for="pwd">Password</label> &nbsp; <i id="ipass" class="fa fa-eye" style="padding-top: 15px;" onclick="hideshowpass()"></i>
-                                             <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo @$_COOKIE['cpass'];?>">
+                                             <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo @$_COOKIE['cpass'];?>" style="text-align:left;">
                                         </div>
                                         <br>
                                         <div class="form-group">

@@ -11,14 +11,10 @@ include('templates/header.php');
                     </div>
                     
                     <div class="profile-info col-md-12 col-lg-9">
-                    
                          <div class="panel">
-                              
-                              <h3 style="text-align:center">Performance Appraisal </h3>
-                                        
+                              <h3 style="text-align:center">Performance Appraisal </h3>     
                          </div>
-
-                         
+                         <br>
                          <div class="panel">
                               <div class="bio-graph-heading">
                                    FORM B(Section 2)
@@ -33,7 +29,11 @@ include('templates/header.php');
                                    if($rowStatus['SectionI'] == 0){                                                    
                               ?>
                               <div class="panel-body bio-graph-info">
-                                        <h3>Employee has not filled this form</h3>
+                              <div style = "text-align: center;">
+                                   <br>
+                                   <div class="container" style="padding-top:10px; text-align:left;"><h5>Employee has not filled this form</h5></div>
+                                   <br>
+                              </div>
                                    <a href="researchhod1.php"><button>Next</button></a>
                               </div>
                               <?php }

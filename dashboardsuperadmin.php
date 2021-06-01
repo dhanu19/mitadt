@@ -1,12 +1,8 @@
-
-
-
-     <?php
-     require_once('connection.php');
-     include('templates/header.php');
-     //include('headersuperadmin.php');
-    ?>
-     <div style="padding-top: 4.5rem;">
+<?php
+require_once('connection.php');
+include('templates/header.php');
+?>
+     <div >
      
      <div class="container bootstrap snippets bootdey">
           <div class="row">

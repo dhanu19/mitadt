@@ -16,6 +16,7 @@ include('templates/header.php');
                          <h3 style="text-align:center">Performance Appraisal </h3>
                                    
                     </div>
+                    <br>
                     <div class="panel">
                          <div class="bio-graph-heading">
                               FORM B (Section 3)
@@ -31,7 +32,9 @@ include('templates/header.php');
                          ?>
                          <div class="panel-body bio-graph-info">
                               <div style = "text-align: center;">
-                                   <h3>Employee has not filled this form</h3>
+                              <br>
+                              <div class="container" style="padding-top:10px; text-align:left;"><h5>Employee has not filled this form</h5></div>
+                              <br>
                               </div>
                               <a
                                    href="contributionhod1.php"><button>Next</button></a>

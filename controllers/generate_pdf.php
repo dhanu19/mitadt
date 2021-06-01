@@ -1,7 +1,7 @@
 <?php
 //include connection file 
-include_once("connection.php");
-include_once('fpdf183/fpdf.php');
+include_once("../connection.php");
+include_once('fpdf.php');
 date_default_timezone_set('Asia/Kolkata');
 
 class PDF extends FPDF
@@ -10,7 +10,7 @@ class PDF extends FPDF
     function Header()
     {
         // Logo
-        $this->Image('assets/images/logo.jpg',10,7,30);
+        $this->Image('../assets/images/logo.jpg',10,7,30);
         $this->SetFont('Arial','B',13);
         // Move to the right
         $this->Cell(40);
