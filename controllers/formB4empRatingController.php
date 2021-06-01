@@ -19,6 +19,6 @@ $executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
 if($executeInsertEmpRatingsQuery){
      $updateStatusQuery = "Update status set SectionIV = 1 where Userid = '$varUserId'";
      $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
-     header('Location:../dashboardself.php');
+     header('Location:../Form_C1_self.php');
 }
 ?>

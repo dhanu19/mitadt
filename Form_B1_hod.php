@@ -29,7 +29,11 @@ include('templates/header.php');
                                    if($rowStatus['SectionI'] == 0){                                                    
                               ?>
                               <div class="panel-body bio-graph-info">
-                                        <h3>Employee has not filled this form</h3>
+                              <div style = "text-align: center;">
+                                   <br>
+                                   <div class="container" style="padding-top:10px; text-align:left;"><h5>Employee has not filled this form</h5></div>
+                                   <br>
+                              </div>
                                    <a href="researchhod1.php"><button>Next</button></a>
                               </div>
                               <?php }

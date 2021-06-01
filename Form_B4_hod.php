@@ -33,7 +33,9 @@ include('templates/header.php');
                          ?>
                          <div class="panel-body bio-graph-info">
                               <div style = "text-align: center;">
-                                   <h3>Employee has not filled this form</h3>
+                              <br>
+                              <div class="container" style="padding-top:10px; text-align:left;"><h5>Employee has not filled this form</h5></div>
+                              <br>
                               </div>
                               <a href="form4self(1).php"><button>Next</button></a>
                          </div>

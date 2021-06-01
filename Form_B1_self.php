@@ -86,7 +86,9 @@ include('templates/header.php');
                               if($rowStatus['SectionI'] == 1){                                                    
                          ?>
                          <div class="panel-body bio-graph-info">
-                              <h3>You already have filled this form</h3>
+                              <br>
+                              <div class="container" style="padding-top:10px; text-align:left;"><h5>You already have filled this form</h5></div>
+                              <br>
                               <!-- <button>Edit My Previous Response</button> -->
                          </div>
                          <?php }
