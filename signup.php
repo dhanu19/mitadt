@@ -19,7 +19,7 @@ include('templates/header.php');
                               <br>
                               <div class="form-group">
                                    <label for="empid">Employee ID</label>
-                                   <input type="text" class="form-control" id="empid" name="empid" value="" style="text-align:left;">
+                                   <input type="text" class="form-control" id="empid" name="empid" value="" style="text-align:left;" required>
                               </div>
                               <br>
                               <div class="form-group">
