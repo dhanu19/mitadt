@@ -20,13 +20,29 @@ include('templates/header.php');
                         DOWNLOADS
                     </div>
                     <br>
-                    <div class="panel-body bio-graph-info">
+                    <div class="panel-body bio-graph-info" style="color:black;font-size:15px;">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-3" style="color:black;font-size:15px;">Generate PDF</div>
                                 <div class="col-3">
-                                    <button class="btn btn-primary" href="">Download</button>
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="designation" style="font-size: 16px;">Select Designation</label>
+                                            <select name="designation" class='form-control' id="des" style="text-align:left;">
+                                                <option selected>Select</option>
+                                                <option value="Fresher">Fresher</option>
+                                                <option value="Professor">Professor</option>
+                                                <option value="Associate Professor">Associate Professor</option>
+                                                <option value="Assistant Professor">Assistant Professor</option>
+                                                <option value="Teaching Assistant">Teaching Assistant</option>
+                                                <option value="Technical Assistant">Technical Assistantt</option>
+                                                <option value="Lab Assistant">Lab Assistant</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Generate Report</button>
+                                    </form>
                                 </div>
+                                
                             </div>
                             
                         </div>
