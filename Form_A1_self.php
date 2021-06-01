@@ -28,7 +28,7 @@ include('templates/header.php');
                          ?>
                          
 
-                         <form action="controllers/form_data_validation.php" method="POST" >
+                         <form action="controllers/form_a1_validation.php" method="POST" >
                               
                               <div class="container" style="padding:0px 30px 30px 30px;">
                               
@@ -70,6 +70,11 @@ include('templates/header.php');
                                    <div class="form-group">
                                         <label for="religion">Religion</label>
                                         <input type="text" class="form-control" id="religion" name="religion" value="<?php echo $rowUserInfo['Religion'];?>" style="text-align:left;">
+                                   </div>
+                                   <br>
+                                   <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $rowUserInfo['Email'];?>" style="text-align:left;">
                                    </div>
                                    <br>
                                    <button type="submit" value="login" class="btn btn-primary text-center">Submit</button>

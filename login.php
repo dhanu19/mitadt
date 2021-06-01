@@ -26,7 +26,7 @@
                                    <!-- Aadhar number input -->
                                    <div class="form-outline mb-4">
                                         <label class="form-label" for="aadharno">Adhar Card Number: </label>
-                                        <input type="number" name="aadharno"  id="aadharno" class="form-control" style="text-align:left;" required/>
+                                        <input type="text" name="aadharno"  id="aadharno" class="form-control" style="text-align:left;" required/>
                                    </div>
 
                                    <!-- Password input -->

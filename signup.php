@@ -11,51 +11,45 @@ include('templates/header.php');
                          <div class="panel">
                               <h3 style="text-align:center">Sign Up </h3>                         
                          </div>
-                         <form action="" method="">
+                         <form action="controllers/signup_validation.php" method="POST">
                               <div class="form-group">
                                    <label for="aadharno">Aadhar Card Number</label>
-                                   <input type="number" class="form-control" id="aadharno" name="password" value="" style="text-align:left;" required >
+                                   <input type="number" class="form-control" id="aadharno" name="aadharno" value="" style="text-align:left;" required >
                               </div>
                               <br>
                               <div class="form-group">
                                    <label for="empid">Employee ID</label>
-                                   <input type="text" class="form-control" id="empid" name="password" value="" style="text-align:left;" required>
+                                   <input type="text" class="form-control" id="empid" name="empid" value="" style="text-align:left;">
                               </div>
                               <br>
                               <div class="form-group">
                                    <label for="institute">Institute</label>
                                    <select class="form-control" id="institute" name="institute" value="" required>
-                                        <option>Select</option>
-                                        <option>SOE</option>
-                                        <option>SANGEET</option>
-                                        <option>MANET</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option selected>Select</option>
+                                        <option value="SOE">SOE</option>
+                                        <option value="SANGEET">SANGEET</option>
+                                        <option value="MANET">MANET</option>
                                    </select>
                               </div>
                               <br>
                               <div class="form-group">
                                    <label for="designation">Designation</label>
                                    <select class="form-control" id="designation" name="designation" value="" required>
-                                        <option>Select</option>
-                                        <option>HOD</option>
-                                        <option>PRINCIPAL</option>
-                                        <option>PROFESSOR</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option selected>Select</option>
+                                        <option value="HOD">HOD</option>
+                                        <option value="PRINCIPAL">PRINCIPAL</option>
+                                        <option value="PROFESSOR">PROFESSOR</option>
                                    </select>
                               </div>
                               <br>
                               <div class="form-inline">
                               <div class="form-group">
                                    <label for="exampleFormControlSelect1">Branch</label>
-                                   <select class="form-control" id="exampleFormControlSelect1" name="" value="" required>
-                                        <option>Select</option>
-                                        <option>CSE</option>
-                                        <option>MECHANICAL</option>
-                                        <option>IT</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                   <select class="form-control" id="exampleFormControlSelect1" name="exampleFormControlSelect1" value="" required>
+                                        <option selected>Select</option>
+                                        <option value="CSE">CSE</option>
+                                        <option value="MECHANICAL">MECHANICAL</option>
+                                        <option value="IT">IT</option>
                                    </select>
                               </div>
                               <br>
@@ -64,11 +58,11 @@ include('templates/header.php');
                                    <input type="password" class="form-control" id="password" name="password" value="" style="text-align:left;" required>
                               </div>
                               <br>
-                              <div class="form-group">
+                              <!--<div class="form-group">
                                    <label for="confirmpassword">Confirm Password</label>
                                    <input type="password" class="form-control" id="confirmpassword" name="confirmpassowrd" value="" style="text-align:left;" required>
                               </div>
-                              <br>
+                              <br>--> 
                               <button type="submit" class="btn btn-primary">Sign Up</button>
                               <br>
                          </form>

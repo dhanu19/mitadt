@@ -28,7 +28,7 @@ include('templates/header.php');
                             <div class="row">
                                 <div class="panel-body bio-graph-info" >
                                     
-                                    <table class="table table-striped ">
+                                    <table class="table ">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="text-align: center;" >Sr. No.  </th>
