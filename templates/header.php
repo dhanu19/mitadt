@@ -168,34 +168,34 @@ header {
                             <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div style="right:0;" class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <div style="right:0;" class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
-                                <li class="nav-item active" >
+                                    <li class="nav-item active" >
                                         <a class="nav-link"  style="color: white; "><h6>MIT-ADT University</h6></a>
                                     </li>
-                            <!-- home -->
-                                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
+                                     <!-- home -->
+                                    <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="index.php" style="color: white;">Home</a>
                                     </li>
                                     
-                                <?php } else { //if session is not set run this?>
+                                     <?php } else { //if session is not set run this?>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="index.php" style="color: white;">Home</a>
                                     </li>
-                                <?php }?>
+                                    <?php }?>
 
-                                <!-- dashboard -->
-                                <?php if((isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
-                                    <?php if(($_SESSION['designation'] == 'Principal' )) {?>
+                                    <!-- dashboard -->
+                                    <?php if((isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
+                                        <?php if(($_SESSION['designation'] == 'Principal' )) {?>
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboarddirector.php" style="color: white;">Dashboard</a>
                                         </li>
-                                    <?php }elseif(($_SESSION['designation'] == 'HOD' )) {?>
+                                        <?php }elseif(($_SESSION['designation'] == 'HOD' )) {?>
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboardHOD.php" style="color: white;">Dashboard</a>
                                         </li>
-                                    <?php }elseif(($_SESSION['designation'] == 'Admin' )){?>
+                                        <?php }elseif(($_SESSION['designation'] == 'Admin' )){?>
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboardsuperadmin.php" style="color: white;">Dashboard</a>
                                         </li>
@@ -204,13 +204,13 @@ header {
                                             <a class="nav-link" href="dashboardself.php" style="color: white;">Dashboard</a>
                                         </li>
                                         <?php } ?>
-                                <?php } ?>
+                                    <?php } ?>
 
-                                <?php if(!(isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
+                                    <?php if(!(isset($_SESSION['login']) && $_SESSION['login'] == "1")){ // if session is set run this?>
                                     <li class="nav-item">
                                         <a class="nav-link" href="signup.php" style="color: white;">Sign Up</a>
                                     </li>
-                                <?php } ?>
+                                    <?php } ?>
 
                                     <!-- forms -->
                                     <?php if((isset($_SESSION['login']) && $_SESSION['login'] == "1")){ //if session is set run this?>
@@ -247,15 +247,23 @@ header {
                                             </li>
                                         <?php } ?>
                                     <?php }?>
-                                    
-                                    
-                                    
+                                        
+                                </ul>
 
-                                    <!--<li class="nav-item">
-                                        <a class="nav-link" href="contactUs.php">Contact us</a>
-                                    </li> -->
+                                <ul class="navbar-nav">
 
-                                    <!-- login / logout-->
+                                    <!-- WELCOME MESSAGE -->
+
+                                    <!-- LOGIN /LOGOUT-->
+                                    <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
+                                        <?php if($_SESSION['designation'] == 'Admin' ) {?>
+                                            <li class="nav-item"><a href="reportAdmin.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
+                                        <?php }elseif($_SESSION['designation'] == 'Principal') {?>
+                                            <li class="nav-item"><a href="reportDirector.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
+                                        <?php }?>
+                                    <?php }?>
+
+                                    <!-- LOGIN /LOGOUT-->
                                     <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
                                         <li class="nav-item">
                                             <a class="nav-link" href="controllers/logout.php" style="color: white;">Logout</a>
@@ -268,15 +276,9 @@ header {
                                         </li>
                                     <?php }?>
 
-                                    <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "1")){ //if session is set run this?>
+                                    
 
-                                        <?php if($_SESSION['designation'] == 'Admin' ) {?>
-                                            <li><a href="reportAdmin.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
-                                        <?php }elseif($_SESSION['designation'] == 'Principal') {?>
-                                            <li><a href="reportDirector.php"><button class="btn btn-primary btn-sm" >Download</button></a></li>
-                                        <?php }?>
-                                      
-                                    <?php }?>
+
                                 </ul>
                             </div>
                         </div>

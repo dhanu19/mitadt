@@ -42,7 +42,11 @@
                     <a href="#">
                          <img src="<?php echo $imagePath; ?>" alt="">
                     </a>
-                    <h1><?php if(isset($_SESSION['userName'])){
+                    <h1>
+
+                    <?php
+                    
+                    if(isset($_SESSION['userName'])){
                                              echo $_SESSION['userName'];
                                         }
                                         else{
@@ -55,18 +59,23 @@
                     ?></p>
                </div>
           </div>
-          <?php if($_SESSION['designation'] != 'Principal'){ ?>
-               <br>
-          <ul class="nav nav-pills nav-stacked">
-               <li class="active"><a href="#"></i><b>Form Completion Status</b></a></li>
-          </ul>
 
-          
-          <div class="progress">
-               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php echo $status; ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $status; ?>%">
-                    <?php echo $status; ?>%
-          </div>
-     </div>
-     <?php } ?>
+
+
+          <?php  if($_SESSION['designation'] != 'Admin'){ ?>
+               <br>
+               <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#"></i><b>Form Completion Status</b></a></li>
+               </ul>
+
+               
+               <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php echo $status; ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $status; ?>%">
+                         <?php echo $status; ?>%
+                    </div>
+               </div>
+          <?php  }  ?>
+
+
      <br>
      </div>
