@@ -11,10 +11,20 @@ $varA5HR = $_POST['Activity5HR'];
 $varUserId = $_GET['userId'];
 $varTotalHodRating = ($varA1HR + $varA2HR + $varA3HR + $varA4HR + $varA5HR);
 
-$updateHODRatingsQuery = "UPDATE section_v set Activity1HR = '$varA1HR',Activity2HR = '$varA2HR',Activity3HR = '$varA3HR',Activity4HR = '$varA4HR',Activity5HR = '$varA5HR',TotalHodRating = '$varTotalHodRating' where Userid = '$varUserId' ";
-$executeUpdateHODRatingsQuery = mysqli_query($con,$updateHODRatingsQuery);
+if (isset($_POST['save'])) {
+    $updateHODRatingsQuery = "UPDATE section_v set Activity1HR = '$varA1HR',Activity2HR = '$varA2HR',Activity3HR = '$varA3HR',Activity4HR = '$varA4HR',Activity5HR = '$varA5HR',TotalHodRating = '$varTotalHodRating' where Userid = '$varUserId' ";
+    $executeUpdateHODRatingsQuery = mysqli_query($con, $updateHODRatingsQuery);
 
-if($executeUpdateHODRatingsQuery){
-     header('Location:../dashboardHOD.php');
+    if ($executeUpdateHODRatingsQuery) {
+        header('Location:../dashboardHOD.php');
+    }
+}
+else if (isset($_POST['submit'])) {
+    $updateHODRatingsQuery = "UPDATE section_v set Activity1HR = '$varA1HR',Activity2HR = '$varA2HR',Activity3HR = '$varA3HR',Activity4HR = '$varA4HR',Activity5HR = '$varA5HR',TotalHodRating = '$varTotalHodRating' where Userid = '$varUserId' ";
+    $executeUpdateHODRatingsQuery = mysqli_query($con, $updateHODRatingsQuery);
+
+    if ($executeUpdateHODRatingsQuery) {
+        header('Location:../dashboardHOD.php');
+    }
 }
 ?>
