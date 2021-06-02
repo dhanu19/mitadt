@@ -74,6 +74,9 @@ $(document).ready(function() {
 
 
                          <?php
+                              $selectRatingQuery = "SELECT * FROM section_ii WHERE Userid = ".$_SESSION['userId'];
+                              $rowRating='';
+                              if($rowRating = mysqli_fetch_assoc(mysqli_query($con,$selectRatingQuery))){}
                               $selectStatusQuery = "Select * from status where Userid = ".$_SESSION['userId'];
                               $executeSelectStatusQuery = mysqli_query($con,$selectStatusQuery);
                               if(mysqli_num_rows($executeSelectStatusQuery)){
@@ -129,7 +132,9 @@ $(document).ready(function() {
                                                                       <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
                                                                            style="width: 135px;" name="Activity1ER"
-                                                                           id="Activity1ER">
+                                                                           id="Activity1ER" value="<?php if(isset($rowRating['Activity1'])){
+                                                                                    echo $rowRating['Activity1'];
+                                                                                } ?>">
                                                                  </div>
                                                             </td>
 
@@ -154,7 +159,9 @@ $(document).ready(function() {
                                                                       <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
                                                                            style="width: 135px;" name="Activity2ER"
-                                                                           id="Activity2ER">
+                                                                           id="Activity2ER" value="<?php if(isset($rowRating['Activity2'])){
+                                                                                    echo $rowRating['Activity2'];
+                                                                                } ?>">
                                                                  </div>
                                                             </td>
 
@@ -178,7 +185,9 @@ $(document).ready(function() {
                                                                       <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
                                                                            style="width: 135px;" name="Activity3ER"
-                                                                           id="Activity3ER">
+                                                                           id="Activity3ER" value="<?php if(isset($rowRating['Activity3'])){
+                                                                                    echo $rowRating['Activity3'];
+                                                                                } ?>">
                                                                  </div>
                                                             </td>
 
@@ -210,7 +219,9 @@ $(document).ready(function() {
                                                                       <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
                                                                            style="width: 135px;" name="Activity4ER"
-                                                                           id="Activity4ER">
+                                                                           id="Activity4ER" value="<?php if(isset($rowRating['Activity4'])){
+                                                                                    echo $rowRating['Activity4'];
+                                                                                } ?>">
                                                                  </div>
                                                             </td>
 
@@ -238,7 +249,9 @@ $(document).ready(function() {
                                                                       <input type="number" placeholder="0-10"
                                                                            aria-label="0-10" min="0" max="10"
                                                                            style="width: 135px;" name="Activity5ER"
-                                                                           id="Activity5ER">
+                                                                           id="Activity5ER" value="<?php if(isset($rowRating['Activity5'])){
+                                                                                    echo $rowRating['Activity5'];
+                                                                                } ?>">
                                                                  </div>
                                                             </td>
 
@@ -255,7 +268,9 @@ $(document).ready(function() {
                                                                       <!-- <input type="number" placeholder="0-50"
                                                                            aria-label="0-50" min="0" max="50"
                                                                            style="width: 135px;"> -->
-                                                                      <label name="total" value="0" id="total">
+                                                                      <label name="total" value="<?php if(isset($rowRating['TotalSelfRating'])){
+                                                                                    echo $rowRating['TotalSelfRating'];
+                                                                                } ?>" id="total">
                                                                  </div>
                                                             </td>
 
@@ -482,7 +497,10 @@ $(document).ready(function() {
                                              </table>
 
                                              <div class="text-center">
-                                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                                  <button type="submit" class="btn btn-primary"
+                                                       name="save">Save</button>
+                                                  <button type="submit" class="btn btn-primary"
+                                                       name="submit">Submit</button>
                                              </div>
 
                                              <br>

@@ -91,7 +91,9 @@ $(document).ready(function() {
                          ?>
                          <div class="panel-body bio-graph-info">
                               <br>
-                              <div class="container" style="padding-top:10px; text-align:left;"><h5>You already have filled this form</h5></div>
+                              <div class="container" style="padding-top:10px; text-align:left;">
+                                   <h5>You already have filled this form</h5>
+                              </div>
                               <br>
                               <!-- <button>Edit My Previous Response</button> -->
                          </div>
@@ -601,7 +603,10 @@ $(document).ready(function() {
                                                   <input id="input-b5" type=" file" multiple>
                                              </div>
                                              <div class="text-center">
-                                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                                  <button type="submit" class="btn btn-primary"
+                                                       name="save">Save</button>
+                                                  <button type="submit" class="btn btn-primary"
+                                                       name="submit">Submit</button>
                                              </div>
 
                                              <br>

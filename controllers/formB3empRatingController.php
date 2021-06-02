@@ -12,14 +12,26 @@ $varA4ER = $_POST['Activity4ER'];
 $varUserId = $_SESSION['userId'];
 $varTotalEmpRating = ($varA1ER + $varA2ER + $varA3ER + $varA4ER );
 
-$insertEmpRatingsQuery = "INSERT into section_iii(Userid,Activity1,Activity2,Activity3,Activity4,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varTotalEmpRating')";
+if (isset($_POST['save'])) {
 
-// $updateEmpRatingsQuery = "UPDATE section_iii set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
-$executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
+     $insertEmpRatingsQuery = "INSERT into section_iii(Userid,Activity1,Activity2,Activity3,Activity4,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varTotalEmpRating')";
 
-if($executeInsertEmpRatingsQuery){
-     $updateStatusQuery = "Update status set SectionIII = 1 where Userid = '$varUserId'";
-     $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
-     header('Location:../Form_B4_self.php?userId='.$varUserId);
+
+     $executeInsertEmpRatingsQuery = mysqli_query($con,$insertEmpRatingsQuery);
+     if($executeInsertEmpRatingsQuery){
+        header('Location:../Form_B3_self.php?userId='.$varUserId);
+    }
+}
+
+else if(isset($_POST['submit'])){
+     $updateEmpRatingsQuery = "UPDATE section_iii set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
+
+     if(mysqli_query($con,$updateEmpRatingsQuery)){
+          $updateStatusQuery = "Update status set SectionIII = 1 where Userid = '$varUserId'";
+          $executeUpdateStatusQuery = mysqli_query($con,$updateStatusQuery);
+          if ($updateStatusQuery) {
+              header('Location:../Form_B4_self.php?userId='.$varUserId);
+          }
+     }
 }
 ?>
