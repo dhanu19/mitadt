@@ -30,13 +30,14 @@ if (isset($_POST['save'])) {
     }
 }
 else if(isset($_POST['submit'])){
-    $updateEmpRatingsQuery = "UPDATE section_i set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',Activity5 = '$varA5ER',Activity6 = '$varA6ER','titleCourses' = $vartitleCourses,'lectures' = $varAssignedLectures,'takenLectures' = $varTakenLectures,'titlePractical' = $vartitlePracticals,'practicals' = $varAssignedPracticals,'takenPracticals' = $varTakenPracticals,TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
+    $updateEmpRatingsQuery = "UPDATE section_i set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',Activity5 = '$varA5ER',Activity6 = '$varA6ER',titleCourses = '$vartitleCourses',lectures = '$varAssignedLectures',takenLectures = '$varTakenLectures',titlePractical = '$vartitlePracticals',practicals = '$varAssignedPracticals',takenPracticals = '$varTakenPracticals',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
     
     $executeUpdateEmpRatingsQuery = mysqli_query($con, $updateEmpRatingsQuery);
 
     if ($executeUpdateEmpRatingsQuery) {
-        $updateStatusQuery = "Update Status set SectionI = 1 where Userid = '$varUserId'";
+        $updateStatusQuery = "Update status set SectionI = 1 where Userid = '$varUserId'";
         $executeUpdateStatusQuery = mysqli_query($con, $updateStatusQuery);
+        echo $updateStatusQuery;
         if ($executeUpdateStatusQuery) {
             header('Location:../Form_B2_self.php?userId='.$varUserId);
         }
