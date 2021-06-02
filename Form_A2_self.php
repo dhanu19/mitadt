@@ -94,11 +94,11 @@
                                         ?>
                                         <tr>
                                              <th scope="row"><?php echo $wCount;?></th>
-                                             <td><?php echo $rowInfo['NameOfEmployee'];?></td>
-                                             <td><?php echo $rowInfo['Duration'];?></td>
-                                             <td><?php echo $rowInfo['LastDesignation'];?></td>
-                                             <td><?php echo $rowInfo['JobProfile'];?></td>
-                                             <td><?php echo $rowInfo['Salary'];?></td>
+                                             <td><?php echo $rowInfo1['NameOfEmployee'];?></td>
+                                             <td><?php echo $rowInfo1['Duration'];?></td>
+                                             <td><?php echo $rowInfo1['LastDesignation'];?></td>
+                                             <td><?php echo $rowInfo1['JobProfile'];?></td>
+                                             <td><?php echo $rowInfo1['Salary'];?></td>
                                         </tr>
                                         <?php $wCount += 1;} ?>
 

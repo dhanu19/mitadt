@@ -17,6 +17,11 @@ if(isset($_POST['flag'])){
 
       }
       else if($_POST['flag'] == 'selectDesg'){
+        $varuserId = $_SESSION['userId'];
+        if($_SESSION['designation'] == "HOD"){
+          $rowDepartment = mysqli_fetch_assoc(mysqli_query($con,"SELECT Branch FROM login WHERE id = $varuserId"));
+          $_POST['dep'] = $rowDepartment['Branch'];
+        }
           
         $desgValue = str_replace("+", " ", $_POST['desg']);
         $selectFacultyQuery = "";
