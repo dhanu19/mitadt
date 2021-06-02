@@ -1,6 +1,6 @@
 <?php
 //  EMPLOYEE RATING 4
-session_start();
+// session_start();
 require_once('../connection.php');
 
 $varA1ER = $_POST['Activity1ER'];

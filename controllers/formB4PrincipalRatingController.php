@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 require_once('../connection.php');
 
 $varA1PR = $_POST['Activity1PR'];
