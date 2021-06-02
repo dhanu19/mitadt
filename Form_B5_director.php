@@ -143,7 +143,8 @@ include('templates/header.php');
                               </div>
                          </form>
 
-                         <form action=" " method="POST">
+                         <form action="controllers/formB5PrincipalRatingController.php?userId=<?php echo $_GET['userId']; ?>"
+                              method=" POST">
                               <div class="row">
                                    <div class="panel-body bio-graph-info">
 
@@ -164,6 +165,12 @@ include('templates/header.php');
                                                   </tr>
                                              </thead>
                                              <tbody>
+                                                  <?php
+                                                            $selectRatingsQuery = "Select * from section_v where Userid = ".$_GET['userId'];
+                                                            $executeSelectRatingsQuery = mysqli_query($con, $selectRatingsQuery);
+                                                            $rowRatings = mysqli_fetch_assoc($executeSelectRatingsQuery);
+                                                            
+                                                            ?>
                                                   <tr>
                                                        <th scope="row" style="text-align: center;">1</th>
                                                        <td style="text-align: center;">
@@ -172,16 +179,10 @@ include('templates/header.php');
                                                        </td>
                                                        <td>
                                                             <div style="text-align: center;">
-                                                                 <input name="number" type="number"
+                                                                 <input name="Activity1PR" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
-                                                            </div>
-                                                       </td>
-                                                       <td>
-                                                            <div style="text-align: center;">
-                                                                 <input name="number6" type="number"
-                                                                      style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
+                                                                      aria-label="0-10" min="0" max="10"
+                                                                      value="<?php echo $rowRatings['Activity1PR']; ?>">
                                                             </div>
                                                        </td>
                                                   </tr>
@@ -191,19 +192,13 @@ include('templates/header.php');
                                                             <div style="text-align: justify;">Integrity
                                                             </div>
                                                        </td>
-                                                       <td>
-                                                            <div style="text-align: center;">
-                                                                 <input name="number2" type="number"
-                                                                      style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
-                                                            </div>
-                                                       </td>
 
                                                        <td>
                                                             <div style="text-align: center;">
-                                                                 <input name="number7" type="number"
+                                                                 <input name="Activity2PR" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
+                                                                      aria-label="0-10" min="0" max="10"
+                                                                      value="<?php echo $rowRatings['Activity2PR']; ?>">
                                                             </div>
                                                        </td>
                                                   </tr>
@@ -213,19 +208,13 @@ include('templates/header.php');
                                                             <div style="text-align: justify;">
                                                                  Interpersonal Skills</div>
                                                        </td>
-                                                       <td>
-                                                            <div style="text-align: center;">
-                                                                 <input name="number3" type="number"
-                                                                      style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
-                                                            </div>
-                                                       </td>
 
                                                        <td>
                                                             <div style="text-align: center;">
-                                                                 <input name="number8" type="number"
+                                                                 <input name="Activity3PR" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
+                                                                      aria-label="0-10" min="0" max="10"
+                                                                      value="<?php echo $rowRatings['Activity3PR']; ?>">
                                                             </div>
                                                        </td>
                                                   </tr>
@@ -234,17 +223,13 @@ include('templates/header.php');
                                                        <div style="text-align: justify;">Communications
                                                             Skills</div>
                                                   </td>
-                                                  <td>
-                                                       <div style="text-align: center;">
-                                                            <input name="number4" type="number" style="width: 135px;"
-                                                                 placeholder="0-10" aria-label="0-10" min="0" max="10">
-                                                       </div>
-                                                  </td>
 
                                                   <td>
                                                        <div style="text-align: center;">
-                                                            <input name="number9" type="number" style="width: 135px;"
-                                                                 placeholder="0-10" aria-label="0-10" min="0" max="10">
+                                                            <input name="Activity4PR" type="number"
+                                                                 style="width: 135px;" placeholder="0-10"
+                                                                 aria-label="0-10" min="0" max="10"
+                                                                 value="<?php echo $rowRatings['Activity4PR']; ?>">
                                                        </div>
                                                   </td>
                                                   </tr>
@@ -257,17 +242,19 @@ include('templates/header.php');
                                                        </td>
                                                        <td>
                                                             <div style="text-align: center;">
-                                                                 <input name="number5" type="number"
+                                                                 <input name="Activity5PR" type="number"
                                                                       style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
+                                                                      aria-label="0-10" min="0" max="10"
+                                                                      value="<?php echo $rowRatings['Activity5PR']; ?>">
                                                             </div>
                                                        </td>
 
                                                        <td>
                                                             <div style="text-align: center;">
-                                                                 <input name="number10" type="number"
-                                                                      style="width: 135px;" placeholder="0-10"
-                                                                      aria-label="0-10" min="0" max="10">
+                                                                 <input type="number" style="width: 135px;"
+                                                                      placeholder="0-10" aria-label="0-10" min="0"
+                                                                      max="10"
+                                                                      value="<?php echo $rowRatings['TotalDirectorPrincipalRating']; ?>">
                                                             </div>
                                                        </td>
                                                   </tr>
@@ -280,7 +267,8 @@ include('templates/header.php');
                                         <br>
                                         <br>
                                         <div class="text-center">
-                                             <button type="submit" class="btn btn-primary">Submit</button>
+                                             <button type="submit" class="btn btn-primary" name="save">Save</button>
+                                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                                         </div>
 
                                         <br>

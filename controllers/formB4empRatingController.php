@@ -15,6 +15,10 @@ if (isset($_POST['save'])) {
     $insertEmpRatingsQuery = "INSERT into section_iv(Userid,Activity1,Activity2,Activity3,Activity4,TotalSelfRating) VALUES('$varUserId','$varA1ER','$varA2ER','$varA3ER','$varA4ER','$varTotalEmpRating')";
 
     $executeInsertEmpRatingsQuery = mysqli_query($con, $insertEmpRatingsQuery);
+    $executeInsertEmpRatingsQuery1 = mysqli_query($con,"INSERT INTO section_v(Userid) VALUES('$varUserId')");
+    if($executeInsertEmpRatingsQuery && $executeInsertEmpRatingsQuery1){
+        header('Location:../Form_C1_self.php');
+    }
 }
 else if(isset($_POST['submit'])){
      $updateEmpRatingsQuery = "UPDATE section_iv set Activity1 = '$varA1ER',Activity2 = '$varA2ER',Activity3 = '$varA3ER',Activity4 = '$varA4ER',TotalSelfRating = '$varTotalEmpRating' where Userid = '$varUserId' ";
