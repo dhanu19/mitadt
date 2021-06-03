@@ -3,7 +3,6 @@ require_once('connection.php');
 include('templates/header.php');
 ?>
 
-
      <div class="container bootstrap snippets bootdey">
           <div class="row">
                <div class="col-12 col-md-12 col-lg-3">
