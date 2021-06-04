@@ -1,6 +1,8 @@
 <!-- DATABASE CONNECTION CODE-->
 <?php
 session_start();
+require_once('..\connection.php');
+/*
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -12,7 +14,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+*/
 ?>
 <!-- DATABASE CONNECTION CODE END-->
 
@@ -31,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     $sql = "select * from login where AdharCard = '$aadharno' AND Password = '$password' ";
 
-	$result = mysqli_query($conn,$sql);
+	$result = mysqli_query($con,$sql);
     if(mysqli_num_rows($result)){
         //succesfull
         session_start();
@@ -43,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION['login'] = 1;
 
         $selectUserInfoQuery = "select * from personaldetails where Userid = ".$_SESSION['userId'];
-        $executeSelectInfoQuery = mysqli_query($conn,$selectUserInfoQuery);
+        $executeSelectInfoQuery = mysqli_query($con,$selectUserInfoQuery);
         if(mysqli_num_rows($executeSelectInfoQuery)){
             $rowInfo = mysqli_fetch_assoc($executeSelectInfoQuery);
 

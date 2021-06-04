@@ -34,7 +34,7 @@ include('templates/header.php');
                               
                                    <div class="form-group">
                                         <label for="empName">Employee Name</label>
-                                        <input type="text" class="form-control" id="empName" name="empName" value="<?php echo $rowUserInfo['NameOfFacultyMember'];?>" style="text-align:left;">
+                                        <input type="text" class="form-control" id="empName" name="empName" value="<?php if(isset($rowUserInfo['NameOfFacultyMember'])){echo $rowUserInfo['NameOfFacultyMember'];} ?>" style="text-align:left;">
                                    </div>
                                    <br>
                                    <div class="form-group">
@@ -98,11 +98,6 @@ include('templates/header.php');
 
      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-     <script type="text/javascript">
-
-     </script>
-     </br>
-     </br>
 
 
      <!-- jQuery -->
@@ -122,6 +117,3 @@ include('templates/header.php');
      <script src="assets/js/custom.js"></script>
      <!--  -->
 
-</body>
-
-</html>

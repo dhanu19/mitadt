@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once('..\connection.php');
+/*
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -11,7 +13,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+*/
 $firstName = $lastName = $name = $fatherName = $age = $dob = $gender = $dependents = $maritalStatus = $nationality = $religion = $email = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){

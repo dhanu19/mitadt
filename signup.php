@@ -62,18 +62,18 @@ include('templates/header.php');
                                         </select>
                                    </div>
                                    <br>
-                                   <div class="form-group">
-                                        <label for="exampleInputEmail1">Password</label>
-                                        <input type="password" class="form-control" id="password" name="password"
-                                             value="" style="text-align:left;" required>
-                                   </div>
-                                   <br>
-                                   <!--<div class="form-group">
-                                   <label for="confirmpassword">Confirm Password</label>
-                                   <input type="password" class="form-control" id="confirmpassword" name="confirmpassowrd" value="" style="text-align:left;" required>
-                              </div>
-                              <br>-->
-                                   <button type="submit" class="btn btn-primary">Submit & Notify</button>
+                                   <!--
+                                        <div class="form-group">
+                                             <label for="exampleInputEmail1">Password</label>
+                                             <input type="password" class="form-control" id="password" name="password"
+                                                  value="" style="text-align:left;" required>
+                                        </div>
+                                        <br>
+                                        -->
+
+                                   <button type="submit" name="signup" class="btn btn-primary"
+                                        onclick="generatePassword()">Submit & Notify </button>
+                                   <small>OTP will be sent on email provided. Login using the OTP.</small>
                                    <br>
                          </form>
                     </div>
@@ -82,19 +82,18 @@ include('templates/header.php');
      </div>
 
 </div>
-
-
-
-
-
-
+<?php include ('templates/footer.php'); ?>
 
 <?php
         include ('templates/footer.php');
         ?>
 
 
+<script>
+function generatePassword() {
 
+}
+</script>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
