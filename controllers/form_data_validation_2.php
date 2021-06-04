@@ -68,7 +68,7 @@ for( $j = 1 ; $j < $workRows ; $j++){
 	$desg = $_POST['desg'.$j];
 	$jobProfile = $_POST['jp'.$j];
 	$salary = $_POST['sal'.$j];
-	$insertWorkQuery = "INSERT INTO workexperience(`Userid`,`NameOfEmployee`,`Duration`,`LastDesignation`,`JobProfile`,`Salary`) VALUES('$userid','$empName','$duration','$desg','$jobProfile','$salary')";
+	$insertWorkQuery = "INSERT INTO workexperience(`Userid`,`NameOfEmployee`,`Duration`,`LastDesignation`,`JobProfile`,`Salary`) VALUES('$userId','$empName','$duration','$desg','$jobProfile','$salary')";
 	mysqli_query($con,$insertWorkQuery);
 }
 // header('Location:dashboard.php');
